@@ -1,15 +1,32 @@
 import './App.css'
-import { Button } from "@/components/ui/button"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import ContactPage from './pages/ContactPage'
+import HomePage from './pages/HomePage'
 
 
 function App() {
 
 
   return (
-    <>
-      <h1>Codilex Ai</h1>
-      <Button>Click me</Button>
-    </>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className='flex-grow'>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+
+        </main>
+        <Footer />
+      </div>
+    </Router>
+
+
+
+
   )
 }
 
