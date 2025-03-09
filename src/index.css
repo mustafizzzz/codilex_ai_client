@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -118,7 +118,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+:root {
+  --font-sans: 'Roboto Serif', serif;
+}
+
+body {
+  font-family: var(--font-sans);
 }
