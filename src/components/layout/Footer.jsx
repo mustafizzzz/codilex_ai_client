@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
 
           {/* Subscribe - 4 columns */}
-          <div className="md:col-span-4 md:mr-auto">
+          <div className="md:col-span-4">
             <h4 className="text-md font-semibold mb-4">Subscribe</h4>
             <div className="flex bg-white rounded-full overflow-hidden px-5 py-2">
               <input
@@ -94,8 +94,12 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-800 my-8"></div>
 
+
+
         {/* Bottom Section - using the same grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+
           {/* Copyright - 4 columns */}
           <div className="md:col-span-3">
             <h5 className="text-sm font-semibold mb-2">Copyright by</h5>
@@ -115,6 +119,7 @@ const Footer = () => {
               <p className="text-xs text-gray-300">119 Tanglewood Lane Gulfport, MS 39503</p>
             </div>
 
+
             {/* Social Icons */}
             <div className="flex space-x-4">
               <a href="#" className="bg-white rounded-full p-2 flex items-center justify-center">
@@ -131,6 +136,8 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
+
         </div>
       </div>
     </footer>
