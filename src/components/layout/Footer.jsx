@@ -78,7 +78,7 @@ const Footer = () => {
           {/* Subscribe - 4 columns */}
           <div className="md:col-span-4">
             <h4 className="text-md font-semibold mb-4">Subscribe</h4>
-            <div className="flex bg-white rounded-full overflow-hidden px-5 py-2">
+            <div className="bg-white rounded-full overflow-hidden px-5 py-2 flex flex-col lg:flex-row">
               <input
                 type="email"
                 placeholder="Enter your email here"

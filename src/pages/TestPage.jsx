@@ -1,4 +1,6 @@
+import TestimonialCardTest from '@/TestComponents/TestimonialCardTest.jsx'
 import React from 'react'
+import Section7Ellipse from '../../src/assets/Section7Ellipse.png'
 
 const TestPage = ({ className = "" }) => {
   return (
@@ -37,36 +39,46 @@ const TestPage = ({ className = "" }) => {
     //   </div>
     // </div>
 
-    <div className=" min-h-screen flex flex-col items-center justify-center bg-white p-4">
-      <div className="w-full max-w-sm sm:max-w-md md:max-w-lg">
+    // <div className=" min-h-screen flex flex-col items-center justify-center bg-white p-4">
+    //   <div className="w-full max-w-sm sm:max-w-md md:max-w-lg">
 
-        <div className={`relative aspect-square w-full max-w-[400px] flex items-center justify-center ${className}`}>
-          {/* Ellipse decorations - positioned first in the DOM but visually behind */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* Outer ellipse */}
-            <div className="absolute w-[95%] h-[95%]">
-              <img src="/src/assets/Ellipse13.svg" alt="" className="w-full h-full" />
-            </div>
+    //     <div className={`relative aspect-square w-full max-w-[400px] flex items-center justify-center ${className}`}>
+    //       {/* Ellipse decorations - positioned first in the DOM but visually behind */}
+    //       <div className="absolute inset-0 flex items-center justify-center">
+    //         {/* Outer ellipse */}
+    //         <div className="absolute w-[95%] h-[95%]">
+    //           <img src="/src/assets/Ellipse13.svg" alt="" className="w-full h-full" />
+    //         </div>
 
-            {/* Middle ellipse */}
-            <div className="absolute w-[87.5%] h-[87.5%]">
-              <img src="/src/assets/Ellipse14.svg" alt="" className="w-full h-full" />
-            </div>
+    //         {/* Middle ellipse */}
+    //         <div className="absolute w-[87.5%] h-[87.5%]">
+    //           <img src="/src/assets/Ellipse14.svg" alt="" className="w-full h-full" />
+    //         </div>
 
-            {/* Inner ellipse */}
-            <div className="absolute w-[80%] h-[80%]">
-              <img src="/src/assets/Ellipse15.svg" alt="" className="w-full h-full" />
-            </div>
-          </div>
+    //         {/* Inner ellipse */}
+    //         <div className="absolute w-[80%] h-[80%]">
+    //           <img src="/src/assets/Ellipse15.svg" alt="" className="w-full h-full" />
+    //         </div>
+    //       </div>
 
-          {/* Main circular image - positioned last in the DOM to be visually on top */}
-          <div className="relative z-10 rounded-full overflow-hidden w-[75%] h-[75%]">
-            <img src="/src/assets/testimonialDummy1.png" alt="Profile" className="w-full h-full object-cover" />
-          </div>
-        </div>
+    //       {/* Main circular image - positioned last in the DOM to be visually on top */}
+    //       <div className="relative z-10 rounded-full overflow-hidden w-[75%] h-[75%]">
+    //         <img src="/src/assets/testimonialDummy1.png" alt="Profile" className="w-full h-full object-cover" />
+    //       </div>
+    //     </div>
 
-      </div>
+    //   </div>
+    // </div>
+
+    <div className="container mx-auto py-16 px-4">
+      <TestimonialCardTest
+        ellipseImage="/src/assets/Section7Ellipse.png"
+        personImage="/src/assets/testimonialDummy1.png"
+        altText="Business person in a suit"
+      />
     </div>
+
+
   )
 }
 
