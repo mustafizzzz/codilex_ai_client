@@ -1,0 +1,55 @@
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import React from 'react'
+
+const ContentImageSection = ({
+  subtitle = "Lorem Ipsum",
+  title = "Lorem Ipsum is simply dummy",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
+  buttonText = "Start your Free Trial",
+  buttonOnClick,
+  image,
+  bgColor = "bg-white",
+  imageOnRight = true,
+  className = "",
+}) => {
+  // Determining text color based on background
+  const isDarkBg = bgColor.includes("black") || bgColor.includes("gray-900");
+  const isLightBg = bgColor.includes("white") || bgColor.includes("gray-100");
+
+  const textColor = isDarkBg ? "text-white" : isLightBg ? "text-black" : "text-gray-800";
+  const descriptionColor = isDarkBg ? "text-gray-300" : isLightBg ? "text-gray-600" : "text-gray-700";
+  const buttonBg = isDarkBg ? "bg-white text-black hover:bg-gray-200" : "bg-black text-white hover:bg-gray-800";
+
+  return (
+    <section className={cn(bgColor, className)}>
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Content Section */}
+          <div className={cn("space-y-6", imageOnRight ? "md:order-1" : "md:order-2")}>
+            <span className="text-teal-500 font-medium block">{subtitle}</span>
+            <h2 className={cn("text-4xl md:text-5xl font-bold tracking-tight", textColor)}>{title}</h2>
+            <p className={cn("max-w-md", descriptionColor)}>{description}</p>
+            <Button onClick={buttonOnClick} className={cn("rounded-full px-4 py-2 font-medium transition-colors cursor-pointer", buttonBg)}>
+              {buttonText}
+            </Button>
+          </div>
+
+          {/* Image Section */}
+          <div className={cn("relative", imageOnRight ? "md:order-2" : "md:order-1")}>
+            <div className="rounded-lg overflow-hidden">
+              <img src={image || "/placeholder.svg"} alt={title}
+                className="w-full h-auto object-cover
+              sm:max-w-[200px] md:max-w-[350px] lg:max-w-[450px] xl:max-w-[580px]" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  )
+}
+
+export default ContentImageSection

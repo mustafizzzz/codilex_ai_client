@@ -1,35 +1,9 @@
-import { cn } from '@/lib/utils'
 import React from 'react'
 
-const CircularImage = ({ image, ringImage, alt = "Image", className = "" }) => {
+const CircularImage = ({ imageSrc, className = " " }) => {
   return (
-    <div className={cn("relative inline-block w-full", className)}>
-      {/* Ring image */}
-      {ringImage && (
-        <img
-          src={ringImage || "/placeholder.svg"}
-          alt=""
-          className="w-full h-auto"
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Main circular image using percentage positioning */}
-      <div
-        className="absolute rounded-full overflow-hidden"
-        style={{
-          top: '25%',
-          left: '34.5%',
-          width: '40%',
-          height: '40%'
-        }}
-      >
-        <img
-          src={image || "/placeholder.svg"}
-          alt={alt}
-          className="w-full h-full object-cover"
-        />
-      </div>
+    <div className={`relative aspect-square w-full h-full flex items-center justify-center ${className}`}>
+      <img src={imageSrc || "/placeholder.svg"} alt="Featured image" className="w-full h-full object-contain" />
     </div>
   )
 }
