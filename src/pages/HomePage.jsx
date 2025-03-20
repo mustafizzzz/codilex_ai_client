@@ -11,7 +11,7 @@ import FreeTrailSection3 from './HomeComponent/FreeTrailSection3'
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <CtaSection />
       <ServicesSection />
       <FreeTrailSection1 />
@@ -20,9 +20,7 @@ const HomePage = () => {
       <FeaturesSection />
       <TestimonialsSection />
       <ProjectSection />
-
-
-    </div>
+    </>
   )
 }
 

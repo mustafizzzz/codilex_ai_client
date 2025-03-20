@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage'
 import HomePage from './pages/HomePage'
 import TestPage from './pages/TestPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import NewsPage from './pages/NewsPage'
 
 const queryClient = new QueryClient()
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/news" element={<NewsPage />} />
               <Route path="/test" element={<TestPage />} />
             </Routes>
           </main>
