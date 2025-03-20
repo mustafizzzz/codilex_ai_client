@@ -1,6 +1,6 @@
 import { Pen, Code, BarChart, Smartphone, Users, Globe } from "lucide-react"
-import SectionTitle from "./SectionTitle"
-import ServiceCard from "./ServiceCard"
+import SectionTitle from "./ServiceSectionComponent/SectionTitle"
+import ServiceCard from "./ServiceSectionComponent/ServiceCard"
 
 //it will be pass as props in future
 const services = [
@@ -45,11 +45,11 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-30 bg-gray-50">
       <div className="container mx-auto px-4">
         <SectionTitle subtitle="Lorem Ipsum" title="Lorem Ipsum is simply dummy text of the" className="mb-12" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

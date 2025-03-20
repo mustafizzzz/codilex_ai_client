@@ -1,12 +1,14 @@
 import React from 'react'
-import Section8Img1 from '../../assets/Section8Img1.png';
-import Section8Img2 from '../../assets/Section8Img2.png';
-import Section8Img3 from '../../assets/Section8Img3.png';
-import Section8Img4 from '../../assets/Section8Img4.png';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectSectionComponent/ProjectCard';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ChevronRight } from 'lucide-react';
+
+
+import Section8Img1 from '../../assets/ProjectSectionImage/Section8Img1.png';
+import Section8Img2 from '../../assets/ProjectSectionImage/Section8Img2.png';
+import Section8Img3 from '../../assets/ProjectSectionImage/Section8Img3.png';
+import Section8Img4 from '../../assets/ProjectSectionImage/Section8Img4.png';
 
 const ProjectSection = () => {
 
@@ -51,11 +53,11 @@ const ProjectSection = () => {
   }
   return (
 
-    <section className="py-16">
+    <section className="py-16 pt-35">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-30">Lorem Ipsum is simply</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-20">Lorem Ipsum is simply</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Column - Larger Projects */}
           <div className="space-y-14">
             <ProjectCard {...projects[0]} />
@@ -64,7 +66,8 @@ const ProjectSection = () => {
 
           {/* Right Column - Trial Button and Projects */}
           <div className="space-y-14 mt-12">
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-end mb-12 md:w-[80%] md: mx-auto">
+
               <Button
                 onClick={handleTrialClick}
                 className={cn(
@@ -76,6 +79,7 @@ const ProjectSection = () => {
               </Button>
 
             </div>
+
             <ProjectCard {...projects[2]} />
             <ProjectCard {...projects[3]} />
           </div>

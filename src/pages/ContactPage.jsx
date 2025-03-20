@@ -1,10 +1,11 @@
 import React from 'react'
-import SiteHeader from '../components/reuseComponent/SiteHeader'
+import SiteHeader from '@/components/reuseComponent/SiteHeader';
 import ContactInfo from './ContactComponent/ContactInfo'
 import ContactForm from './ContactComponent/ContactForm'
 import LocationMap from './ContactComponent/LocationMap'
 
-import RectangleContact from ".././assets/RectangleContact.png";
+import RectangleContact from ".././assets/HeaderBanner/RectangleContact.png";
+
 
 const ContactPage = () => {
   return (

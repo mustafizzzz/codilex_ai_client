@@ -13,7 +13,7 @@ const CTABanner = ({
 }) => {
   return (
     <div className={`container mx-auto ${paddingY} ${className}`}>
-      <div className="relative bg-gray-500 rounded-xl overflow-hidden">
+      <div className="relative bg-gray-200 rounded-xl overflow-hidden">
         {/* Background image */}
         {backgroundImage && (
           <div className="absolute inset-0 flex items-center justify-center">

@@ -1,6 +1,6 @@
 import React from 'react'
-import Section5Group from '../../assets/Section5Group.png'
-import ContentImageSection from './ContentImageSection'
+import Section5Group from '../../assets/FreeTrailSectionImage/Section5Group.png'
+import ContentImageSection from './FreeTrailSectionComponent/ContentImageSection'
 
 const FreeTrailSection3 = () => {
   const handleButtonClick = () => {

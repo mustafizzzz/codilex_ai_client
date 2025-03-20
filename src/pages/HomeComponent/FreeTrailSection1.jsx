@@ -1,6 +1,6 @@
 import React from 'react'
-import ContentImageSection from './ContentImageSection'
-import Section3Group from '../../assets/Section3Group.png'
+import ContentImageSection from './FreeTrailSectionComponent/ContentImageSection'
+import Section3Group from '../../assets/FreeTrailSectionImage/Section3Group.png'
 
 const FreeTrailSection1 = () => {
 

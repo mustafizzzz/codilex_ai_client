@@ -78,16 +78,22 @@ const Footer = () => {
           {/* Subscribe - 4 columns */}
           <div className="md:col-span-4">
             <h4 className="text-md font-semibold mb-4">Subscribe</h4>
-            <div className="bg-white rounded-full overflow-hidden px-5 py-2 flex flex-col lg:flex-row">
+            <div className="bg-white rounded-full overflow-hidden flex items-center px-4 py-2 sm:flex-row relative">
               <input
                 type="email"
                 placeholder="Enter your email here"
-                className="px-4 py-2 rounded-full text-black text-sm flex-grow focus:outline-none"
+                className="px-4 py-1 rounded-full text-black text-sm w-full focus:outline-none"
               />
-              <Button className="rounded-full">
+              {/* Hidden on Mobile, Visible on Desktop */}
+              <Button className="rounded-full px-6 py-2 text-sm font-medium hidden sm:block cursor-pointer">
                 Subscribe
               </Button>
             </div>
+
+            {/* New White Button - Only Visible on Mobile */}
+            <Button className="rounded-full w-full px-6 py-2 mt-2 text-sm font-medium bg-white text-black border border-gray-300 sm:hidden hover:bg-gray-100 cursor-pointer">
+              Subscribe
+            </Button>
           </div>
         </div>
 

@@ -7,7 +7,7 @@ const BrandLogo = ({ src, alt, className = "" }) => {
       <img
         src={src || "/placeholder.svg"}
         alt={alt}
-        className="h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+        className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
       />
     </div>
   )

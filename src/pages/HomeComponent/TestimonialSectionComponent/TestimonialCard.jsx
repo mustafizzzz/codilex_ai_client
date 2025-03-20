@@ -1,18 +1,15 @@
 import { cn } from '@/lib/utils'
 import React from 'react'
 
-const TestimonialCard = ({ image, quote, author, role, className = "" }) => {
+const TestimonialCard = ({ quote, author, role, chevronButtons, className = "" }) => {
 
 
 
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 items-center", className)}>
+    <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-4 items-center text-center md:text-left px-4", className)}>
       {/* Image Section */}
-      <div className="relative flex justify-center">
-        <div className={cn("relative aspect-square ")}>
-          <img src={image || "/placeholder.svg"} alt={`${author}, ${role}`} className="w-full h-full object-contain max-w-[540px]" />
-        </div>
-      </div>
+      <div className="hidden lg:block"></div>
+
 
       {/* Content Section */}
       <div className="space-y-6">
@@ -21,6 +18,9 @@ const TestimonialCard = ({ image, quote, author, role, className = "" }) => {
           <div className="font-semibold text-lg">{author}</div>
           <div className="text-gray-600">{role}</div>
         </div>
+
+        {/* Render Chevron Buttons */}
+        {chevronButtons}
       </div>
     </div>
   )

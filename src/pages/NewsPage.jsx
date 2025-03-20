@@ -4,7 +4,7 @@ import SiteHeader from '../components/reuseComponent/SiteHeader';
 import CTABanner from '@/components/reuseComponent/CTABanner';
 
 
-import RectangleContact from ".././assets/RectangleContact.png";
+import RectangleContact from ".././assets/HeaderBanner/RectangleContact.png";
 import CTABackgroundBanner from ".././assets//HeaderBanner/CTABackgroundBanner.png";
 
 const NewsPage = () => {

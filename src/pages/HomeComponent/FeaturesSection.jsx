@@ -1,6 +1,6 @@
 import { Zap, Shield, Star, Settings } from "lucide-react"
-import SectionTitle from "./SectionTitle";
-import FeatureCard from "./FeatureCard";
+import SectionTitle from "./ServiceSectionComponent/SectionTitle";
+import FeatureCard from "./FeatureSectionComponent/FeatureCard";
 
 
 
@@ -31,11 +31,11 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="py-16">
+    <section className="py-35">
       <div className="container mx-auto px-4">
         <SectionTitle subtitle="Lorem Ipsum" title="Lorem Ipsum is simply dummy text of the" className="mb-12" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {features.map((feature, index) => (
             <FeatureCard key={index} Icon={feature.icon} title={feature.title} description={feature.description} />
           ))}
