@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Button } from '../ui/button'
 import { Menu } from 'lucide-react';
+import companyLogo from '../../assets/companyLogo.png';
 
 const Navbar = () => {
 
@@ -17,13 +18,19 @@ const Navbar = () => {
   const isActive = (path) => {
     return location.pathname === path;
   }
+
+
+
+
+
   return (
     <header className='sticky top-0 bg-white z-10'>
       <div className="container mx-auto px-4 py-4">
         <nav className='flex items-center justify-between'>
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">codilex.ai</span>
+          <Link to="/" className="flex items-center space-x-1">
+            <img src={companyLogo} alt="company logo" className='h-8 w-full object-cover' />
+            <span className="text-xl font-bold">CodiLex.ai</span>
           </Link>
 
           {/* Desktop navigation */}

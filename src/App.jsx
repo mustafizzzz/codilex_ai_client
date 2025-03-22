@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage'
 import TestPage from './pages/TestPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import NewsPage from './pages/NewsPage'
+import AboutPage from './pages/AboutPage'
 
 const queryClient = new QueryClient()
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <main className='flex-grow'>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/news" element={<NewsPage />} />
               <Route path="/test" element={<TestPage />} />

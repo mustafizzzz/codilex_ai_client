@@ -5,7 +5,7 @@ import CTABanner from '@/components/reuseComponent/CTABanner';
 
 
 import RectangleContact from ".././assets/HeaderBanner/RectangleContact.png";
-import CTABackgroundBanner from ".././assets//HeaderBanner/CTABackgroundBanner.png";
+import CTABackgroundBanner from ".././assets/HeaderBanner/CTABackgroundBanner.png";
 
 const NewsPage = () => {
 

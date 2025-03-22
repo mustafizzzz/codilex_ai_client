@@ -46,13 +46,13 @@ const CtaSection = () => {
 
             <div>
               <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-2 cursor-pointer">
-                <button
+                <div
 
                   className="p-1 rounded-full bg-black text-white cursor-pointer hover:bg-gray-800 transition-colors"
                   aria-label="Previous testimonial"
                 >
                   <ChevronRight className="w-5 h-5" />
-                </button>
+                </div>
                 Ask Question
               </Button>
             </div>

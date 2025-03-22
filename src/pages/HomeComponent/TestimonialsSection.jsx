@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import TestimonialCard from "./TestimonialSectionComponent/TestimonialCard";
 
 // Import your image
 import Section7Group from '../../assets/TestimonialSectionImage/Section7Group.png';
-import TestimonialCard from "./TestimonialSectionComponent/TestimonialCard";
 
 
 
