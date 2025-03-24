@@ -7,6 +7,8 @@ import CTABanner from '@/components/reuseComponent/CTABanner';
 import RectangleContact from ".././assets/HeaderBanner/RectangleContact.png";
 import CTABackgroundBanner from ".././assets/HeaderBanner/CTABackgroundBanner.png";
 
+
+//get kis format json 
 const NewsPage = () => {
 
   const newsArticles = [

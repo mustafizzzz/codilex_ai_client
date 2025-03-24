@@ -11,9 +11,9 @@ const FreeTrailSection2 = () => {
   return (
 
     <ContentImageSection
-      subtitle="Lorem Ipsum"
-      title="Lorem Ipsum is simply dummy"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id."
+      subtitle="AI-Generated Judgment Headnotes"
+      title="Save Time, Enhance Research"
+      description="Legal research can be time-consuming, but our AI-driven Judgment Headnotes tool condenses lengthy court judgments into concise, well-structured summaries. It extracts key takeaways, including the ratio decidendi, obiter dicta, and relevant precedents, making legal analysis faster and more efficient. Categorized for easy access, this feature is ideal for lawyers, researchers, and students looking to quickly grasp the essence of a case without reading through hundreds of pages."
       buttonText="Start your Free Trial"
       buttonOnClick={handleButtonClick}
       image={Section4Group}

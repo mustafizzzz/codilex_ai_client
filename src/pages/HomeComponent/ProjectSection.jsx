@@ -53,7 +53,7 @@ const ProjectSection = () => {
   }
   return (
 
-    <section className="py-16 pt-35">
+    <section className="pb-35 pt-35">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-20">Lorem Ipsum is simply</h2>
 

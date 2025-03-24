@@ -6,40 +6,40 @@ import ServiceCard from "./ServiceSectionComponent/ServiceCard"
 const services = [
   {
     icon: Pen,
-    title: "Lorem Ipsum dummy",
+    title: "Instant Legal Answers for Everyone",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Get clear, accurate answers to your legal questions in seconds. No jargon, no confusion—just straightforward guidance.",
     variant: "primary",
   },
   {
     icon: Code,
-    title: "Lorem Ipsum dummy",
+    title: "Judgment Headnotes Made Simple",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Quickly understand key points of any judgment. Our AI extracts and summarizes headnotes, saving you hours of reading.",
   },
   {
     icon: BarChart,
-    title: "Lorem Ipsum dummy",
+    title: "Case File Summaries in Minutes",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Turn lengthy case files, applications, and summons into concise summaries. Focus on what matters most—your case strategy.",
   },
   {
     icon: Smartphone,
-    title: "Lorem Ipsum dummy",
+    title: "Effortless Legal Drafting",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Draft documents, suits, and replies with ease. Our AI ensures accuracy, compliance, and professionalism in every draft.",
   },
   {
     icon: Users,
-    title: "Lorem Ipsum dummy",
+    title: "Find Laws and Cases Instantly",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Search and retrieve relevant laws, precedents, and case summaries in seconds, making legal research effortless.",
   },
   {
     icon: Globe,
-    title: "Lorem Ipsum dummy",
+    title: "Image-to-Text Conversion for Lawyers",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the industry's standard dummy.",
+      "Convert PDFs and images into editable text instantly. Draft replies faster and streamline your workflow with AI-powered tools.",
   },
 ]
 

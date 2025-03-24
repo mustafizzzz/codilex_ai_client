@@ -33,19 +33,18 @@ const CtaSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center px-4">
 
           {/* Left content column */}
-          <div className="flex flex-col space-y-8 lg:pr-8 relative">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                Ready to take your <span className="block text-teal-400">Lorem Ipsum Dummy</span> to the next level?
+          <div className="flex flex-col space-y-6 lg:pr-8 relative">
+            <div className="space-y-6">
+              <h1 className="font-serif text-3xl md:text-4xl font-medium leading-tight">
+                Ready to revolutionize your <span className="block text-teal-400">legal practice with AI?</span>
               </h1>
-              <p className="text-gray-400 max-w-md">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit - et ut massa libero egestas malesuada viverra
-                gravida libero cursus nulla leo pulvinar.
+              <p className="font-sans max-w-md">
+                Streamline legal research, draft documents faster, and analyse cases with precision using our AI powered legal tools.
               </p>
             </div>
 
             <div>
-              <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-2 cursor-pointer">
+              <Button className="font-sans bg-white text-black hover:bg-gray-200 rounded-full px-2 cursor-pointer">
                 <div
 
                   className="p-1 rounded-full bg-black text-white cursor-pointer hover:bg-gray-800 transition-colors"
@@ -63,8 +62,8 @@ const CtaSection = () => {
             </div>
 
             {/* Brands */}
-            <div className="pt-18">
-              <p className="text-sm text-teal-400 mb-2">Trusted by Leading Brands</p>
+            <div className="pt-20">
+              <p className="font-serif text-sm font-medium text-teal-300 mb-2 ml-3">Trusted by Leading Brands</p>
               <div className="flex flex-wrap gap-8">
                 {brands.map((brand) => (
                   <BrandLogo key={brand.id} src={brand.src} alt={brand.alt} />

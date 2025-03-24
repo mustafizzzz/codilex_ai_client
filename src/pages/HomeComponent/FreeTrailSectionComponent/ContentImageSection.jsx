@@ -42,13 +42,13 @@ const ContentImageSection = ({
 
           {/* Content Section */}
           <div className={cn("space-y-6", imageOnRight ? "md:order-1" : "md:order-2")}>
-            <span className="text-teal-500 font-medium block">{subtitle}</span>
-            <h2 className={cn("text-4xl md:text-5xl font-bold tracking-tight", textColor)}>{title}</h2>
-            <p className={cn("max-w-md mb-14", descriptionColor)}>{description}</p>
+            <span className="text-teal-400 font-medium block font-serif">{subtitle}</span>
+            <h2 className={cn("text-4xl md:text-5xl font-medium tracking-tight font-serif", textColor)}>{title}</h2>
+            <p className={cn(" font-sm font-light max-w-xl mb-14 font-sans", descriptionColor)}>{description}</p>
 
             <Button
               onClick={buttonOnClick}
-              className={cn("rounded-full px-2 py-2 font-medium transition-colors cursor-pointer flex items-center gap-2", buttonBg)}
+              className={cn("font-sans rounded-full px-2 py-2 font-medium transition-colors cursor-pointer flex items-center gap-2 pr-4", buttonBg)}
             >
               <div className={cn(
                 "rounded-full p-1 flex items-center justify-center",

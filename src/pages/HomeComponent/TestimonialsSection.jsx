@@ -5,13 +5,19 @@ import TestimonialCard from "./TestimonialSectionComponent/TestimonialCard";
 // Import your image
 import Section7Group from '../../assets/TestimonialSectionImage/Section7Group.png';
 
-
-
+// TODO in json format pass the data
 const testimonials = [
   {
     image: Section7Group,
     quote:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.",
+    author: "James Ryan",
+    role: "Freelancer",
+  },
+  {
+    image: Section7Group,
+    quote:
+      "okay.",
     author: "James Ryan",
     role: "Freelancer",
   },
