@@ -33,7 +33,7 @@ const MissionSection = ({
     <section className={cn("bg-black text-white py-16 md:py-24", className)}>
       <div className="container mx-auto px-4">
 
-        <div className="border grid grid-cols-1 lg:grid-cols-12 gap-12 h-160">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:h-160">
 
           {/* Left Content - Mission and Bullet Points */}
           <div className="lg:col-span-7 space-y-8 h-full flex flex-col justify-center">
@@ -56,10 +56,10 @@ const MissionSection = ({
           </div>
 
           {/* Right Content - Stats with Images */}
-          <div className="relative lg:col-span-5 h-full">
+          <div className="lg:col-span-5 h-full">
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 h-full">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 h-full">
 
               {/* Left stat */}
               <div className="flex flex-col items-center justify-center md:items-start md:pr-8">
@@ -70,23 +70,34 @@ const MissionSection = ({
                     alt="Business professionals in conversation"
                     className="w-full h-full object-cover"
                   />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 md:divide-x-1 divide-white">
-
-                  <div className="w-full text-center md:text-left">
-                    <h2 className="text-3xl font-semibold mb-2 text-center font-serif">10k</h2>
-                    <p className="text-sm text-center font-light font-sans">Lorem Ipsum is simply dummy</p>
-                  </div>
-
-
-
-                  <div className="w-full text-center md:text-left mt-12 ">
-                    <h2 className="text-3xl font-semibold mb-2 text-center font-serif">95+</h2>
-                    <p className=" max-w-xs text-sm text-center font-light font-sans">Lorem Ipsum</p>
-                  </div>
 
                 </div>
+
+                <div className="relative w-full h-40 flex items-center">
+
+                  <div className="absolute left-1/2 top-10 bottom-0 w-[1px] bg-white transform -translate-x-1/2 h-25"></div>
+
+                  <div className="w-1/2 h-full flex flex-col justify-center items-center text-center pr-4">
+                    <h2 className="text-3xl font-semibold mb-2 font-serif">10k</h2>
+                    <p className="max-w-xs text-sm font-light font-sans">Lorem Ipsum is simply dummy</p>
+                  </div>
+
+                  <div className="w-1/2 h-full flex flex-col justify-end items-center text-center pl-4">
+                    <h2 className="text-3xl font-semibold mb-2 font-serif">95+</h2>
+                    <p className="max-w-xs text-sm font-light font-sans">Lorem Ipsum</p>
+                  </div>
+
+                </div>
+
+                {/*Animated Tooltip  */}
+                <div className="md:hidden flex flex-col justify-center items-center bg-white rounded-xl p-3 mt-10 w-full shadow-lg">
+                  <h3 className="text-black text-medium font-medium font-sans block mb-2">Our Users Worldwide</h3>
+                  <div className="w-full flex flex-row items-center justify-center">
+                    <AnimatedTooltip items={items} />
+                  </div>
+                </div>
+
+
 
               </div>
 
@@ -102,15 +113,25 @@ const MissionSection = ({
                 </div>
               </div>
 
-              <div className="absolute top-4 left-80 flex justify-center items-center bg-white rounded-xl">
-                <AnimatedTooltip items={items} />
+              {/* Animated Tooltip */}
+
+              <div className="absolute hidden md:block md:top-20 md:left-60 flex flex-col items-center bg-white rounded-xl p-3 shadow-lg">
+                <h3 className="text-black text-base font-medium font-sans mb-2">
+                  Our Users Worldwide
+                </h3>
+                <div className="w-full flex items-center justify-center">
+                  <AnimatedTooltip items={items} />
+                </div>
               </div>
+
+
 
             </div>
 
           </div>
 
         </div>
+
       </div>
     </section>
   )

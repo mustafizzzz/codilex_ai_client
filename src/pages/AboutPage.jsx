@@ -2,6 +2,9 @@ import React from 'react'
 import TeamSection from './AboutComponent/TeamSection'
 import VideoSection from './AboutComponent/VideoSection'
 import StatsSection from './AboutComponent/StatsSection'
+import MissionSection from './AboutComponent/MissionSection'
+import BrandsSection from './AboutComponent/BrandsSection'
+import AboutHeroSection from './AboutComponent/AboutHeroSection'
 
 
 
@@ -16,9 +19,10 @@ import logo3 from '.././assets/TrustedBrandLogo/logo3.png';
 import logo4 from '.././assets/TrustedBrandLogo/logo4.png';
 import logo5 from '.././assets/TrustedBrandLogo/logo5.png';
 import logo6 from '.././assets/TrustedBrandLogo/logo6.png';
-import BrandsSection from './AboutComponent/BrandsSection'
-import AboutHeroSection from './AboutComponent/AboutHeroSection'
-import MissionSection from './AboutComponent/MissionSection'
+
+import AboutSection1 from '.././assets/AboutSection/AboutSection1.png';
+
+
 
 
 
@@ -105,6 +109,7 @@ const AboutPage = () => {
         title="Ready to take"
         highlightedText="Lorem Dummy"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar."
+        image={AboutSection1}
         buttonText="Contact Us"
         buttonOnClick={handleContactButtonClick}
       />

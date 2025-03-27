@@ -8,12 +8,14 @@ const AboutHeroSection = ({
   title = "Ready to take",
   highlightedText = "Lorem Dummy",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar.",
+  image,
   buttonText = "Contact Us",
   buttonOnClick,
   className = "",
 }) => {
   return (
-    <section className={cn("text-white py-16 md:py-24 overflow-hidden", className)}>
+    <section className={cn("text-white py-16 md:py-24 overflow-hidden px-4 md:px-25 xxl:px-0", className)}>
+
       <div className="bg-black rounded-xl container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8">
 
@@ -38,11 +40,18 @@ const AboutHeroSection = ({
 
           {/* Right Content - Image Placeholder */}
           <div className="relative">
-            <div className="relative rounded-lg overflow-hidden border-2 border-gray-700 aspect-[4/3] bg-gray-800">
-              {/* This will be replaced with an actual image later */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                <p>Image placeholder</p>
-              </div>
+            <div className="relative rounded-lg overflow-hidden aspect-[1] -mb-20">
+              {image ? (
+                <img
+                  src={image}
+                  alt="About Section"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                  <p>Image placeholder</p>
+                </div>
+              )}
             </div>
 
             {/* Decorative element */}

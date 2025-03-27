@@ -47,7 +47,7 @@ const AnimatedTooltip = ({ items }) => {
             width={56}
             src={item.image}
             alt={item.name}
-            className="h-14 w-14 rounded-full border-2 border-white object-cover transition-transform duration-500 group-hover:z-30 group-hover:scale-105"
+            className="h-10 w-10 rounded-full border-2 border-white object-cover transition-transform duration-500 group-hover:z-30 group-hover:scale-105"
           />
         </div>
       ))}
