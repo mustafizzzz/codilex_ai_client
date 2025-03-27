@@ -1,8 +1,16 @@
 import TestimonialCardTest from '@/TestComponents/TestimonialCardTest.jsx'
 import React from 'react'
 import Section7Ellipse from '../../src/assets/Section7Ellipse.png'
+import AnimatedTooltip from '@/TestComponents/AnimatedTooltip'
 
 const TestPage = ({ className = "" }) => {
+
+  const items = [
+    { id: 1, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/4.jpg" },
+    { id: 2, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/8.jpg" },
+  ];
+
+
   return (
     // <div className="relative w-[400px] h-[400px]">
     //   {/* Main circular image */}
@@ -70,12 +78,16 @@ const TestPage = ({ className = "" }) => {
     //   </div>
     // </div>
 
-    <div className="container mx-auto py-16 px-4">
-      <TestimonialCardTest
-        ellipseImage="/src/assets/Section7Ellipse.png"
-        personImage="/src/assets/testimonialDummy1.png"
-        altText="Business person in a suit"
-      />
+    // <div className="container mx-auto py-16 px-4">
+    //   <TestimonialCardTest
+    //     ellipseImage="/src/assets/Section7Ellipse.png"
+    //     personImage="/src/assets/testimonialDummy1.png"
+    //     altText="Business person in a suit"
+    //   />
+    // </div>
+
+    <div className="flex justify-center items-center border border-4 bg-gray-100">
+      <AnimatedTooltip items={items} />
     </div>
 
 

@@ -17,6 +17,8 @@ import logo4 from '.././assets/TrustedBrandLogo/logo4.png';
 import logo5 from '.././assets/TrustedBrandLogo/logo5.png';
 import logo6 from '.././assets/TrustedBrandLogo/logo6.png';
 import BrandsSection from './AboutComponent/BrandsSection'
+import AboutHeroSection from './AboutComponent/AboutHeroSection'
+import MissionSection from './AboutComponent/MissionSection'
 
 
 
@@ -90,10 +92,49 @@ const AboutPage = () => {
     console.log("Trail button clicked in about");
 
   }
+  const handleContactButtonClick = () => {
+    console.log("Contact us button clicked");
+
+  }
 
   return (
     <div>
+
+      <AboutHeroSection
+        subtitle="Lorem Ipsum is simply dummy text"
+        title="Ready to take"
+        highlightedText="Lorem Dummy"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar."
+        buttonText="Contact Us"
+        buttonOnClick={handleContactButtonClick}
+      />
+
       <StatsSection stats={stats} />
+
+      <MissionSection
+        subtitle="Our Mission"
+        title="Lorem ipsum is dummy text."
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus."
+
+        bulletPoints={[
+          "Lorem ipsum is simply dummy",
+          "Lorem ipsum is simply dummy",
+          "Lorem ipsum is simply dummy",
+          "Lorem ipsum is simply dummy",
+          "Lorem ipsum is simply dummy",
+          "Lorem ipsum is simply dummy",
+        ]}
+
+        items={[
+          { id: 1, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/4.jpg" },
+          { id: 2, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/8.jpg" },
+          { id: 3, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/9.jpg" },
+          { id: 4, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/10.jpg" },
+          { id: 5, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/11.jpg" },
+          { id: 6, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/women/12.jpg" },
+        ]}
+      />
+
       <TeamSection title="Legal Expertise" teamMembers={teamMembers} />
 
       <VideoSection

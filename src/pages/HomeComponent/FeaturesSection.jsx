@@ -9,23 +9,23 @@ import FeatureCard from "./FeatureSectionComponent/FeatureCard";
 const features = [
   {
     icon: Zap,
-    title: "Lorem",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the.",
+    title: "Instant Answers",
+    description: "No more waiting—get legal insights, case summaries, and drafts in seconds.",
   },
   {
     icon: Shield,
-    title: "Lorem",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the.",
+    title: "AI-Trained for Law",
+    description: "Built specifically for legal work, trained on extensive legal data and precedents.",
   },
   {
     icon: Star,
-    title: "Lorem",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the.",
+    title: "Works 24/7",
+    description: "Whether it’s late-night drafting or urgent case research, our AI is always available.",
   },
   {
     icon: Settings,
-    title: "Lorem",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the.",
+    title: "Cost-Effective",
+    description: "Reduce overhead costs no salaries, no raises, just efficiency at a fraction of the price.",
   },
 ]
 
@@ -33,7 +33,7 @@ const FeaturesSection = () => {
   return (
     <section className="py-35">
       <div className="container mx-auto px-4">
-        <SectionTitle subtitle="Lorem Ipsum" title="Lorem Ipsum is simply dummy text of the" className="mb-12" />
+        <SectionTitle subtitle="Lorem Ipsum" title="What Sets Us Apart?" className="mb-12" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {features.map((feature, index) => (

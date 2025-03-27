@@ -17,33 +17,33 @@ const ProjectSection = () => {
     {
       id: 1,
       image: Section8Img1,
-      title: "Lorem Ipsum Dummy",
+      title: "Law Firms",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
+        "Seamlessly integrate AI into your practice and scale your efficiency.",
       link: "#",
     },
     {
       id: 2,
       image: Section8Img2,
-      title: "Lorem Ipsum Dummy",
+      title: "Universities & Legal Education",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
+        "Bringing AI-assisted learning to law students and legal scholars.",
       link: "#",
     },
     {
       id: 3,
       image: Section8Img3,
-      title: "Lorem Ipsum Dummy",
+      title: "Resellers & Affiliates",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
+        "Earn by referring lawyers and firms to our AI-powered tools.",
       link: "#",
     },
     {
       id: 4,
       image: Section8Img4,
-      title: "Lorem Ipsum Dummy",
+      title: "AI Research & Development",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
+        "Help shape the future of AI in law with research collaborations.",
       link: "#",
     },
   ]
@@ -55,7 +55,7 @@ const ProjectSection = () => {
 
     <section className="pb-35 pt-35">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-20">Lorem Ipsum is simply</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-20">Partner With Us</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Column - Larger Projects */}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import companyLogoWhite from '../../assets/companyLogoWhite.png';
 
 const Footer = () => {
   return (
@@ -14,10 +15,14 @@ const Footer = () => {
 
           {/* Logo and Description - 4 columns */}
           <div className="md:col-span-3">
-            <h3 className="text-xl font-bold mb-4">codilex.ai</h3>
-            <p className="text-sm text-gray-300">
-              Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since.
+            <div className="flex items-center py-3">
+              <Link to="/" className="flex items-center space-x-2">
+                <img src={companyLogoWhite} alt="company logo" className='h-8 w-full object-cover text-white' />
+                <span className="text-xl font-bold">CodiLex.ai</span>
+              </Link>
+            </div>
+            <p className="text-sm text-gray-300 font-sans">
+              Our AI-powered legal assistant revolutionizes legal workflows by providing instant, accurate, and efficient solutions for lawyers, law firms, and individuals. Whether you need quick legal insights or automated document processing, our AI optimizes efficiency, allowing professionals to focus on higher-value tasks.
             </p>
           </div>
 

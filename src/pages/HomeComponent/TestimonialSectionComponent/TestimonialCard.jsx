@@ -13,7 +13,7 @@ const TestimonialCard = ({ quote, author, role, chevronButtons, className = "" }
 
       {/* Content Section */}
       <div className="space-y-6">
-        <blockquote className="text-2xl md:text-3xl font-bold leading-relaxed">"{quote}"</blockquote>
+        <blockquote className="text-2xl md:text-3xl font-bold leading-relaxed font-serif">"{quote}"</blockquote>
         <div>
           <div className="font-semibold text-lg">{author}</div>
           <div className="text-gray-600">{role}</div>

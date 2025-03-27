@@ -1,0 +1,147 @@
+import { cn } from '@/lib/utils'
+import AnimatedTooltip from '@/TestComponents/AnimatedTooltip'
+import { CheckCircle } from 'lucide-react'
+import React from 'react'
+
+const MissionSection = ({
+  subtitle = "Our Mission",
+  title = "Lorem ipsum is dummy text.",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus.",
+
+  bulletPoints = [
+    "Lorem ipsum is simply dummy",
+    "Lorem ipsum is simply dummy",
+    "Lorem ipsum is simply dummy",
+    "Lorem ipsum is simply dummy",
+    "Lorem ipsum is simply dummy",
+    "Lorem ipsum is simply dummy",
+  ],
+
+  items = [
+    { id: 1, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/4.jpg" },
+    { id: 2, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/8.jpg" },
+    { id: 3, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/9.jpg" },
+    { id: 4, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/10.jpg" },
+    { id: 5, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/11.jpg" },
+    { id: 6, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/women/12.jpg" },
+  ],
+
+  className = "",
+}) => {
+  return (
+
+    <section className={cn("bg-black text-white py-16 md:py-24", className)}>
+      <div className="container mx-auto px-4">
+
+        <div className="border grid grid-cols-1 lg:grid-cols-12 gap-12 h-160">
+
+          {/* Left Content - Mission and Bullet Points */}
+          <div className="lg:col-span-7 space-y-8 h-full flex flex-col justify-center">
+
+            <div className="space-y-8">
+              <span className="text-teal-400 text-medium font-semibold font-serif">{subtitle}</span>
+              <h2 className="text-4xl md:text-6xl font-semibold mt-6 font-serif max-w-xl ">{title}</h2>
+              <p className="text-gray-300 max-w-xl font-sans">{description}</p>
+            </div>
+
+            {/* Bullet Points in 2 columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {bulletPoints.map((point, index) => (
+                <div key={index} className="flex items-start gap-2">
+                  <CheckCircle className="h-5 w-5 text-teal-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-gray-300">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Content - Stats with Images */}
+          <div className="relative lg:col-span-5 h-full">
+
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 h-full">
+
+              {/* Left stat */}
+              <div className="flex flex-col items-center justify-center md:items-start md:pr-8">
+
+                <div className="w-full max-w-md overflow-hidden rounded-lg mb-8">
+                  <img
+                    src="https://dummyimage.com/250x300"
+                    alt="Business professionals in conversation"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 md:divide-x-1 divide-white">
+
+                  <div className="w-full text-center md:text-left">
+                    <h2 className="text-3xl font-semibold mb-2 text-center font-serif">10k</h2>
+                    <p className="text-sm text-center font-light font-sans">Lorem Ipsum is simply dummy</p>
+                  </div>
+
+
+
+                  <div className="w-full text-center md:text-left mt-12 ">
+                    <h2 className="text-3xl font-semibold mb-2 text-center font-serif">95+</h2>
+                    <p className=" max-w-xs text-sm text-center font-light font-sans">Lorem Ipsum</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* Right stat */}
+              <div className="flex flex-col items-center justify-end md:pl-8">
+
+                <div className="w-full max-w-md overflow-hidden rounded-lg">
+                  <img
+                    src="https://dummyimage.com/250x300"
+                    alt="Business professionals working with laptop"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute top-4 left-80 flex justify-center items-center bg-white rounded-xl">
+                <AnimatedTooltip items={items} />
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default MissionSection
+
+
+// <div div className = "grid grid-cols-1 gap-8" >
+// {
+//   stats.map((stat, index) => (
+
+//     <div key={index} className="relative">
+//       {/* Stat Card */}
+//       <div className="bg-gray-900 p-6 rounded-lg relative z-10">
+//         <div className="text-3xl md:text-4xl font-bold mb-2">
+//           {stat.value}
+//           {stat.suffix}
+//         </div>
+//         <p className="text-sm text-gray-300">{stat.title}</p>
+//       </div>
+
+//       {/* Image Placeholder */}
+//       <div className="absolute top-1/2 right-0 transform translate-x-1/4 -translate-y-1/2 w-24 h-24 rounded-lg overflow-hidden border-2 border-gray-700 z-20">
+//         <div className="w-full h-full bg-gray-800 flex items-center justify-center text-xs text-gray-500">
+//           Image
+//         </div>
+//       </div>
+
+//     </div>
+
+//   ))
+// }
+//           </div >

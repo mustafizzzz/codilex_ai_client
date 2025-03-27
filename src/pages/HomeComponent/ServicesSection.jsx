@@ -47,7 +47,7 @@ const ServicesSection = () => {
   return (
     <section className="py-30 bg-gray-50">
       <div className="container mx-auto px-4">
-        <SectionTitle subtitle="Lorem Ipsum" title="Lorem Ipsum is simply dummy text of the" className="mb-12" />
+        <SectionTitle subtitle="Lorem Ipsum" title="Why work harder when you can work smarter?" className="mb-12" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {services.map((service, index) => (

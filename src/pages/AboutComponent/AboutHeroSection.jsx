@@ -1,0 +1,59 @@
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { ChevronRight } from "lucide-react"
+
+
+const AboutHeroSection = ({
+  subtitle = "Lorem Ipsum is simply dummy text",
+  title = "Ready to take",
+  highlightedText = "Lorem Dummy",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar.",
+  buttonText = "Contact Us",
+  buttonOnClick,
+  className = "",
+}) => {
+  return (
+    <section className={cn("text-white py-16 md:py-24 overflow-hidden", className)}>
+      <div className="bg-black rounded-xl container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-8">
+
+          {/* Left Content */}
+          <div className="space-y-6 max-w-xl">
+            <p className="text-sm text-gray-300 font-sans">{subtitle}</p>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight font-serif">
+              {title} <br />
+              <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
+              to the next level?
+            </h1>
+            <p className="text-gray-300 font-sans">{description}</p>
+            <Button onClick={buttonOnClick} className="bg-white text-black hover:bg-gray-200 cursor-pointer rounded-full font-sans">
+              <div className={cn(
+                "rounded-full p-1 flex items-center justify-center bg-black text-white"
+              )}>
+                <ChevronRight />
+              </div>
+              {buttonText}
+            </Button>
+          </div>
+
+          {/* Right Content - Image Placeholder */}
+          <div className="relative">
+            <div className="relative rounded-lg overflow-hidden border-2 border-gray-700 aspect-[4/3] bg-gray-800">
+              {/* This will be replaced with an actual image later */}
+              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+                <p>Image placeholder</p>
+              </div>
+            </div>
+
+            {/* Decorative element */}
+            {/* <div className="absolute top-1/4 -right-8 w-full h-full rounded-lg border-2 border-gray-700 -z-10"></div> */}
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default AboutHeroSection
+

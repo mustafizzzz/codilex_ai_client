@@ -37,7 +37,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-12">
             {
               navLinks.map((link) => (
-                <Link to={link.path} key={link.name} className={`text-sm font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-gray-700"}`} >
+                <Link to={link.path} key={link.name} className={`text-sm font-medium transition-colors hover:text-primary font-sans ${isActive(link.path) ? "text-primary" : "text-gray-700"}`} >
                   {link.name}
                 </Link>
               ))
@@ -47,7 +47,7 @@ const Navbar = () => {
 
           {/* Login Button */}
           <div className="hidden md:block">
-            <Button variant="default" className="text-white hover:bg-gray-800 rounded-full cursor-pointer">
+            <Button variant="default" className="text-white hover:bg-gray-800 rounded-full cursor-pointer font-sans">
               Log Out
             </Button>
           </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`block text-sm font-medium transition-colors hover:text-primary ${isActive(link.path) ? "text-primary" : "text-gray-700"
+                className={`block text-sm font-medium transition-colors hover:text-primary font-sans ${isActive(link.path) ? "text-primary" : "text-gray-700"
                   }`}
                 onClick={() => setIsMenuOpen(false)}
               >
