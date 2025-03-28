@@ -7,6 +7,7 @@ const AboutHeroSection = ({
   subtitle = "Lorem Ipsum is simply dummy text",
   title = "Ready to take",
   highlightedText = "Lorem Dummy",
+  afterHighlightedText = "to the  next level",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar.",
   image,
   buttonText = "Contact Us",
@@ -22,10 +23,10 @@ const AboutHeroSection = ({
           {/* Left Content */}
           <div className="space-y-6 max-w-xl">
             <p className="text-sm text-gray-300 font-sans">{subtitle}</p>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight font-serif">
+            <h1 className="text-2xl md:text-4xl font-semibold leading-tight font-serif">
               {title} <br />
               <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
-              to the next level?
+              {afterHighlightedText}
             </h1>
             <p className="text-gray-300 font-sans">{description}</p>
             <Button onClick={buttonOnClick} className="bg-white text-black hover:bg-gray-200 cursor-pointer rounded-full font-sans">
@@ -45,7 +46,7 @@ const AboutHeroSection = ({
                 <img
                   src={image}
                   alt="About Section"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-contain"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-gray-500">

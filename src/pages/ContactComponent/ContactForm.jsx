@@ -53,8 +53,9 @@ const ContactForm = () => {
 
     <form onSubmit={handleSubmit(handleContactUs)} className="bg-gray-100 p-8 rounded-lg">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
             First name
           </label>
           <input
@@ -65,8 +66,9 @@ const ContactForm = () => {
           />
           {errors.firstName && <p className="text-red-500 text-xs">{errors.firstName.message}</p>}
         </div>
+
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
             Last name
           </label>
           <input
@@ -77,8 +79,9 @@ const ContactForm = () => {
           />
           {errors.lastName && <p className="text-red-500 text-xs">{errors.lastName.message}</p>}
         </div>
+
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
             Email
           </label>
           <input
@@ -89,8 +92,9 @@ const ContactForm = () => {
           />
           {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
         </div>
+
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
             Phone
           </label>
           <input
@@ -101,9 +105,11 @@ const ContactForm = () => {
           />
           {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
         </div>
+
       </div>
+
       <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
           Message
         </label>
         <textarea
@@ -114,7 +120,8 @@ const ContactForm = () => {
         />
         {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
       </div>
-      <Button type="submit" className="px-6 py-5 rounded-full cursor-pointer" disabled={submitContactFormMutation.isLoading}>
+
+      <Button type="submit" className="px-6 py-5 rounded-full cursor-pointer font-sans" disabled={submitContactFormMutation.isLoading}>
         {submitContactFormMutation.isLoading ? "Submitting..." : "Submit Now"}
       </Button>
       {submitContactFormMutation.isError && <p className="text-red-500">Error submit form</p>}

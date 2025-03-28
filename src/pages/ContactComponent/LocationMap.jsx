@@ -21,7 +21,7 @@ const LocationMap = () => {
 
   return (
     <div className="w-full">
-      <h2 className="text-5xl font-bold mb-12 text-center">Locate Us</h2>
+      <h2 className="text-5xl font-bold mb-12 text-center font-serif">Locate Us</h2>
 
       <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-xl mb-4">
         <MapContainer

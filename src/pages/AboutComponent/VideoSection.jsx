@@ -63,9 +63,9 @@ const VideoSection = ({
 
           {/* Content */}
           <div className="space-y-6">
-            <span className="text-teal-400 font-medium block">{subtitle}</span>
-            <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
-            <p className="text-gray-300">{description}</p>
+            <span className="text-teal-400 font-medium block font-serif">{subtitle}</span>
+            <h2 className="text-3xl md:text-5xl font-semibold font-serif">{title}</h2>
+            <p className="text-gray-300 font-sans">{description}</p>
 
             <Button
               onClick={buttonOnClick}

@@ -59,7 +59,7 @@ const NewsPage = () => {
       <SiteHeader
         backgroundImage={RectangleContact}
         title="News"
-        description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero. egestas malesuada viverra gravida"
+        description="Stay Informed with the Latest Legal News, Insights, and Updates from India."
       />
 
       <NewsSection

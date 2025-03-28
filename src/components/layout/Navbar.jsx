@@ -37,7 +37,8 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-12">
             {
               navLinks.map((link) => (
-                <Link to={link.path} key={link.name} className={`text-sm font-medium transition-colors hover:text-primary font-sans ${isActive(link.path) ? "text-primary" : "text-gray-700"}`} >
+                <Link to={link.path} key={link.name} className={`text-sm transition-colors hover:text-black font-sans 
+                ${isActive(link.path) ? "text-black font-bold" : "text-gray-700 font-medium"}`} >
                   {link.name}
                 </Link>
               ))

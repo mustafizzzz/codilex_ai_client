@@ -5,8 +5,8 @@ const CTABanner = ({
   title = "Enough talk, let's get to work",
   buttonText = "Get in touch",
   buttonHref = "#contact",
-  titleClassName = "text-3xl md:text-4xl font-bold text-white text-center mb-6",
-  buttonClassName = "px-6 py-2 bg-transparent cursor-pointer hover:bg-gray-600 text-white border border-white rounded-full transition-colors duration-300",
+  titleClassName = "text-3xl md:text-4xl font-bold text-white text-center mb-6 font-serif",
+  buttonClassName = "px-6 py-2 bg-transparent cursor-pointer hover:bg-gray-600 text-white border border-white rounded-full transition-colors duration-300 font-sans",
   className = "",
   paddingY = "py-16",
   onButtonClick,
@@ -38,6 +38,7 @@ const CTABanner = ({
             {buttonText}
           </button>
         </div>
+
       </div>
     </div>
   );

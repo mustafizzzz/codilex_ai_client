@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils'
-import AnimatedTooltip from '@/TestComponents/AnimatedTooltip'
-import { CheckCircle } from 'lucide-react'
 import React from 'react'
+import { cn } from '@/lib/utils'
+import { CheckCircle } from 'lucide-react'
+import CountUp from 'react-countup'
+import AnimatedTooltip from './MissionSectionComponent/AnimatedTooltip'
 
 const MissionSection = ({
   subtitle = "Our Mission",
@@ -40,7 +41,7 @@ const MissionSection = ({
 
             <div className="space-y-8">
               <span className="text-teal-400 text-medium font-semibold font-serif">{subtitle}</span>
-              <h2 className="text-4xl md:text-6xl font-semibold mt-6 font-serif max-w-xl ">{title}</h2>
+              <h2 className="text-4xl md:text-6xl font-semibold mt-6 font-serif max-w-xl">{title}</h2>
               <p className="text-gray-300 max-w-xl font-sans">{description}</p>
             </div>
 
@@ -49,7 +50,7 @@ const MissionSection = ({
               {bulletPoints.map((point, index) => (
                 <div key={index} className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-teal-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-gray-300">{point}</span>
+                  <span className="text-sm text-gray-300 font-sans">{point}</span>
                 </div>
               ))}
             </div>
@@ -64,6 +65,7 @@ const MissionSection = ({
               {/* Left stat */}
               <div className="flex flex-col items-center justify-center md:items-start md:pr-8">
 
+                {/* Left Image */}
                 <div className="w-full max-w-md overflow-hidden rounded-lg mb-8">
                   <img
                     src="https://dummyimage.com/250x300"
@@ -73,18 +75,35 @@ const MissionSection = ({
 
                 </div>
 
+                {/* Left Stats */}
                 <div className="relative w-full h-40 flex items-center">
 
                   <div className="absolute left-1/2 top-10 bottom-0 w-[1px] bg-white transform -translate-x-1/2 h-25"></div>
 
                   <div className="w-1/2 h-full flex flex-col justify-center items-center text-center pr-4">
-                    <h2 className="text-3xl font-semibold mb-2 font-serif">10k</h2>
-                    <p className="max-w-xs text-sm font-light font-sans">Lorem Ipsum is simply dummy</p>
+                    <h2 className="text-3xl font-semibold mb-2 font-serif">
+                      <CountUp
+                        end={70}
+                        suffix={'%'}
+                        duration={2.5}
+                        enableScrollSpy={false}
+                        scrollSpyDelay={0}
+                      />
+                    </h2>
+                    <p className="max-w-xs text-sm font-light font-sans">Faster drafting</p>
                   </div>
 
                   <div className="w-1/2 h-full flex flex-col justify-end items-center text-center pl-4">
-                    <h2 className="text-3xl font-semibold mb-2 font-serif">95+</h2>
-                    <p className="max-w-xs text-sm font-light font-sans">Lorem Ipsum</p>
+                    <h2 className="text-3xl font-semibold mb-2 font-serif">
+                      <CountUp
+                        end={1000}
+                        suffix={'+'}
+                        duration={2.5}
+                        enableScrollSpy={false}
+                        scrollSpyDelay={0}
+                      />
+                    </h2>
+                    <p className="max-w-xs text-sm font-light font-sans">Litigants Assisted</p>
                   </div>
 
                 </div>
@@ -97,11 +116,9 @@ const MissionSection = ({
                   </div>
                 </div>
 
-
-
               </div>
 
-              {/* Right stat */}
+              {/* Right Image */}
               <div className="flex flex-col items-center justify-end md:pl-8">
 
                 <div className="w-full max-w-md overflow-hidden rounded-lg">
@@ -114,12 +131,11 @@ const MissionSection = ({
               </div>
 
               {/* Animated Tooltip */}
-
               <div className="absolute hidden md:block md:top-20 md:left-60 flex flex-col items-center bg-white rounded-xl p-3 shadow-lg">
                 <h3 className="text-black text-base font-medium font-sans mb-2">
                   Our Users Worldwide
                 </h3>
-                <div className="w-full flex items-center justify-center">
+                <div className="w-full flex items-center justify-center pr-5">
                   <AnimatedTooltip items={items} />
                 </div>
               </div>

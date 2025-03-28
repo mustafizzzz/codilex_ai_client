@@ -61,24 +61,23 @@ const AboutPage = () => {
     {
       value: 200,
       suffix: "+",
-      title: "Lorem Ipsum",
+      title: "Legal Professionals Onboard",
       description:
-        "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "Trusted by lawyers, law firms, and legal teams for AI-powered efficiency.",
     },
     {
-      value: 99,
+      value: 70,
       suffix: "%",
-      title: "Lorem Ipsum",
+      title: "Time Saved on Drafting & Research",
       description:
-        "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "Accelerate legal workflows with AI-driven document analysis and automation.",
     },
     {
-      value: 1.5,
-      prefix: "",
-      suffix: "M+",
-      title: "Lorem Ipsum",
+      value: 10000,
+      suffix: "+",
+      title: "Documents Processed",
       description:
-        "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
+        "From pleadings to contracts, our AI has reviewed and drafted thousands of legal documents with precision.",
     },
   ]
 
@@ -106,9 +105,10 @@ const AboutPage = () => {
 
       <AboutHeroSection
         subtitle="Lorem Ipsum is simply dummy text"
-        title="Ready to take"
-        highlightedText="Lorem Dummy"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus nulla leo pulvinar."
+        title="We give you legal assistance"
+        highlightedText="which is instant, precise,"
+        afterHighlightedText="and always available."
+        description="Redefining legal efficiency with AI-powered precision."
         image={AboutSection1}
         buttonText="Contact Us"
         buttonOnClick={handleContactButtonClick}
@@ -118,16 +118,16 @@ const AboutPage = () => {
 
       <MissionSection
         subtitle="Our Mission"
-        title="Lorem ipsum is dummy text."
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus."
+        title="Empowering Justice Through Innovation"
+        description="Our mission is to make legal knowledge and tools accessible to everyone—lawyers and litigants alike. By harnessing the power of AI, we simplify complex legal processes, save time, and empower you to make informed decisions with confidence."
 
         bulletPoints={[
-          "Lorem ipsum is simply dummy",
-          "Lorem ipsum is simply dummy",
-          "Lorem ipsum is simply dummy",
-          "Lorem ipsum is simply dummy",
-          "Lorem ipsum is simply dummy",
-          "Lorem ipsum is simply dummy",
+          "Automating tedious legal tasks so lawyers can focus on what matters most— strategy and advocacy.",
+          "Empowering litigants with accessible, affordable, and easy-to-understand legal information.",
+          "Leveraging AI-driven analysis to enhance accuracy and minimize errors in legal documentation.",
+          "Reducing drafting, research, and case summarization time by up to 70%.",
+          "Ensuring end-to-end encryption to maintain confidentiality of sensitive legal data.",
+          "Providing round-the-clock assistance, eliminating delays and workflow disruptions.",
         ]}
 
         items={[
@@ -145,10 +145,10 @@ const AboutPage = () => {
       <VideoSection
         videoThumbnail={videoThumbnail1 || "/placeholder.svg?height=400&width=600"}
         videoUrl="https://www.youtube.com/watch?v=eKSTaoSDrwI"
-        subtitle="Lorem Ipsum"
-        title="Lorem Ipsum is simply dummy"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id."
-        buttonText="Start your Free Trial"
+        subtitle="Transforming Access to Legal Support"
+        title="Bringing legal assistance to everyone, everywhere, with just a click."
+        description="Our AI-powered solutions aren't just for law firms; they empower individuals and businesses alike to navigate the legal landscape. Whether you're a small business owner, a litigant seeking affordable advice, or a legal professional looking to streamline your processes, we’re here to help. Our mission is to make legal services faster, more accessible, and affordable for all.With a focus on simplified legal information, document automation, and cost-effective solutions, we’re democratizing access to legal support."
+        buttonText="Start your Journey today"
         buttonOnClick={handleTrialButtonClick}
       />
       <BrandsSection brands={brands} />

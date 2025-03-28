@@ -6,8 +6,8 @@ const SiteHeader = ({
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero. egestas malesuada viverra gravida libero cursus nulla leo pulvinar.",
   className = "",
   paddingY = "py-16",
-  titleClassName = "text-4xl md:text-5xl font-bold mb-4",
-  descriptionClassName = "max-w-2xl mx-auto text-gray-300",
+  titleClassName = "text-4xl md:text-5xl font-bold mb-4 font-serif",
+  descriptionClassName = "max-w-2xl mx-auto text-gray-300 font-sans",
 }) => {
 
   return (
