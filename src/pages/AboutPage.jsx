@@ -106,8 +106,8 @@ const AboutPage = () => {
       <AboutHeroSection
         subtitle="Lorem Ipsum is simply dummy text"
         title="We give you legal assistance"
-        highlightedText="which is instant, precise,"
-        afterHighlightedText="and always available."
+        highlightedText="precise and always available"
+        afterHighlightedText="delivered swiftly"
         description="Redefining legal efficiency with AI-powered precision."
         image={AboutSection1}
         buttonText="Contact Us"

@@ -2,6 +2,13 @@ import TestimonialCardTest from '@/TestComponents/TestimonialCardTest.jsx'
 import React from 'react'
 import Section7Ellipse from '../../src/assets/Section7Ellipse.png'
 import AnimatedTooltip from '@/TestComponents/AnimatedTooltip'
+import { Cover } from '@/AceternityUi/Cover'
+import { HoverBorderGradient } from '@/AceternityUi/HoverBorderGradient'
+import ShinyButton from '@/AceternityUi/ShinyButton'
+import { HighlightText } from '@/AceternityUi/HighlightText'
+import { AnimatedTestimonials } from '@/AceternityUi/AnimatedTestimonials'
+
+
 
 const TestPage = ({ className = "" }) => {
 
@@ -9,6 +16,45 @@ const TestPage = ({ className = "" }) => {
     { id: 1, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/4.jpg" },
     { id: 2, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/8.jpg" },
   ];
+
+  const testimonials = [
+    {
+      quote:
+        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      name: "Sarah Chen",
+      designation: "Product Manager at TechFlow",
+      src: "https://dummyimage.com/250x300",
+    },
+    {
+      quote:
+        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+      name: "Michael Rodriguez",
+      designation: "CTO at InnovateSphere",
+      src: "https://dummyimage.com/250x300",
+    },
+    {
+      quote:
+        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+      name: "Emily Watson",
+      designation: "Operations Director at CloudScale",
+      src: "https://dummyimage.com/250x300",
+    },
+    {
+      quote:
+        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      name: "James Kim",
+      designation: "Engineering Lead at DataPro",
+      src: "https://dummyimage.com/250x300",
+    },
+    {
+      quote:
+        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      name: "Lisa Thompson",
+      designation: "VP of Technology at FutureNet",
+      src: "https://dummyimage.com/250x300",
+    },
+  ];
+
 
 
   return (
@@ -86,8 +132,40 @@ const TestPage = ({ className = "" }) => {
     //   />
     // </div>
 
-    <div className="flex justify-center items-center border border-4 bg-gray-100">
-      <AnimatedTooltip items={items} />
+    // <div className="flex justify-center items-center border border-4 bg-gray-100">
+    //   <AnimatedTooltip items={items} />
+    // </div>
+
+    // <div >
+    //   <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+    //     Build amazing websites <br /> at <Cover>warp speed</Cover>
+    //   </h1>
+    // </div>
+
+    // <div className="m-40 flex justify-center items-center text-center bg-black h-50">
+    //   <HoverBorderGradient
+    //     containerClassName="rounded-full border border-0" // Light border for visibility
+    //     as="button"
+    //     className="bg-black text-white flex items-center space-x-2 border  border-gray-600"
+
+    //   >
+    //     <span className="text-lg font-semibold">Aceternity UI</span>
+    //   </HoverBorderGradient>
+    // </div>
+
+    // <div className="flex justify-center items-center h-screen bg-gray-900">
+    //   <ShinyButton onClick={() => alert("Button Clicked!")}>
+    //     Tailwind Connect
+    //   </ShinyButton>
+    // </div>
+
+    // <div className="p-10 text-center text-lg font-semibold">
+    //   <p>
+    //     This is an <HighlightText>animated text</HighlightText> effect using Framer Motion.
+    //   </p>
+    // </div>
+    <div>
+      <AnimatedTestimonials testimonials={testimonials} />
     </div>
 
 

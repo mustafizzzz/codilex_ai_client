@@ -11,9 +11,10 @@ const FreeTrailSection2 = () => {
   return (
 
     <ContentImageSection
-      subtitle="AI-Generated Judgment Headnotes"
-      title="Save Time, Enhance Research"
-      description="Legal research can be time-consuming, but our AI-driven Judgment Headnotes tool condenses lengthy court judgments into concise, well-structured summaries. It extracts key takeaways, including the ratio decidendi, obiter dicta, and relevant precedents, making legal analysis faster and more efficient. Categorized for easy access, this feature is ideal for lawyers, researchers, and students looking to quickly grasp the essence of a case without reading through hundreds of pages."
+      subtitle="Legal Help, Now. The Law Shouldn’t Be a Mystery."
+      title="Confused About the Law? Get Instant Answers Without the Jargon."
+      highlightedText="Get Instant Answers"
+      description="No more legal jargon or costly consultations. From contracts to property disputes, our AI simplifies complex laws into clear answers for informed decisions."
       buttonText="Start your Free Trial"
       buttonOnClick={handleButtonClick}
       image={Section4Group}

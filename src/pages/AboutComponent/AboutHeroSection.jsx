@@ -1,3 +1,4 @@
+import { Cover } from "@/AceternityUi/Cover"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { ChevronRight } from "lucide-react"
@@ -26,7 +27,7 @@ const AboutHeroSection = ({
             <h1 className="text-2xl md:text-4xl font-semibold leading-tight font-serif">
               {title} <br />
               <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
-              {afterHighlightedText}
+              <Cover>{afterHighlightedText}</Cover>
             </h1>
             <p className="text-gray-300 font-sans">{description}</p>
             <Button onClick={buttonOnClick} className="bg-white text-black hover:bg-gray-200 cursor-pointer rounded-full font-sans">

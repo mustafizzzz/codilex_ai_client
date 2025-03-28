@@ -11,6 +11,7 @@ import leafBrandLogo from '../../assets/BrandLogoImage/leafBrandLogo.png';
 import mindfulnessBrandLogo from '../../assets/BrandLogoImage/mindfulnessBrandLogo.png';
 import Section1Group from '../../assets/RingImage/Section1Group.png';
 import { FlipWords } from '@/AceternityUi/FlipWords';
+import { HoverBorderGradient } from '@/AceternityUi/HoverBorderGradient';
 
 
 
@@ -46,16 +47,22 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
             </div>
 
             <div>
-              <Button className="font-sans bg-white text-black hover:bg-gray-200 rounded-full px-2 cursor-pointer">
-                <div
+              <HoverBorderGradient
+                containerClassName="rounded-full border border-0" // Light border for visibility
+                as="button"
+                className="bg-black text-white flex items-center space-x-2 border border-gray-600 cursor-pointer font-semibold font-sans gap-2"
 
-                  className="p-1 rounded-full bg-black text-white cursor-pointer hover:bg-gray-800 transition-colors"
+              >
+
+                <div
+                  className="p-1 rounded-full bg-white text-black cursor-pointer hover:bg-gray-800 transition-colors"
                   aria-label="Previous testimonial"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4" />
                 </div>
                 {buttonText}
-              </Button>
+
+              </HoverBorderGradient>
             </div>
 
             {/* Image appears here on mobile */}
@@ -65,7 +72,7 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
 
             {/* Brands */}
             <div className="pt-20">
-              <p className="font-serif text-sm font-medium text-teal-300 mb-2 ml-3">Trusted by Leading Brands</p>
+              <p className="font-serif text-sm font-medium text-teal-300 mb-5 lg:mb-2 ml-3">Trusted by Leading Brands</p>
               <div className="flex flex-wrap gap-8">
                 {brands.map((brand) => (
                   <BrandLogo key={brand.id} src={brand.src} alt={brand.alt} />

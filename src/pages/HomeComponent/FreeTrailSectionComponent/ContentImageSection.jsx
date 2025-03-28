@@ -2,10 +2,13 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import React from 'react'
 import { ChevronRight } from 'lucide-react';
+import ShinyButton from '@/AceternityUi/ShinyButton';
+import { HighlightText } from '@/AceternityUi/HighlightText';
 
 const ContentImageSection = ({
   subtitle = "Lorem Ipsum",
   title = "Lorem Ipsum is simply dummy",
+  highlightedText = "Lorem is dimmy",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
   buttonText = "Start your Free Trial",
   buttonOnClick,
@@ -20,8 +23,11 @@ const ContentImageSection = ({
   const isLightBg = bgColor.includes("white") || bgColor.includes("gray-100");
 
   const textColor = isDarkBg ? "text-white" : isLightBg ? "text-black" : "text-gray-900";
-  const descriptionColor = isDarkBg ? "text-gray-300" : isLightBg ? "text-gray-600" : "text-gray-700";
+  const descriptionColor = isDarkBg ? "text-white" : isLightBg ? "text-gray-600" : "text-gray-700";
   const buttonBg = isDarkBg ? "bg-white text-black hover:bg-gray-200" : "bg-black text-white hover:bg-gray-800";
+
+  // Split the title into parts based on the highlighted text
+  const parts = title.split(new RegExp(`(${highlightedText})`, "gi"));
 
   return (
     <section className={cn(bgColor, className)}>
@@ -42,11 +48,19 @@ const ContentImageSection = ({
 
           {/* Content Section */}
           <div className={cn("space-y-6", imageOnRight ? "md:order-1" : "md:order-2")}>
-            <span className="text-teal-400 font-medium block font-serif">{subtitle}</span>
-            <h2 className={cn("text-4xl md:text-5xl font-medium tracking-tight font-serif", textColor)}>{title}</h2>
-            <p className={cn(" font-sm font-light max-w-xl mb-14 font-sans", descriptionColor)}>{description}</p>
+            <span className="text-teal-500 font-medium block font-serif">{subtitle}</span>
+            <h2 className={cn("text-4xl md:text-5xl font-medium tracking-tight font-serif leading-tight", textColor)}>
+              {parts.map((part, index) =>
+                part.toLowerCase() === highlightedText.toLowerCase() ? (
+                  <HighlightText key={index}>{part}</HighlightText>
+                ) : (
+                  part
+                )
+              )}
+            </h2>
+            <p className={cn("font-sm font-regular max-w-xl mb-14 font-sans", descriptionColor)}>{description}</p>
 
-            <Button
+            {/* <Button
               onClick={buttonOnClick}
               className={cn("font-sans rounded-full px-2 py-2 font-medium transition-colors cursor-pointer flex items-center gap-2 pr-4", buttonBg)}
             >
@@ -57,7 +71,11 @@ const ContentImageSection = ({
                 <ChevronRight />
               </div>
               {buttonText}
-            </Button>
+            </Button> */}
+
+            <ShinyButton onClick={buttonOnClick}>
+              {buttonText}
+            </ShinyButton>
 
           </div>
 
@@ -66,7 +84,7 @@ const ContentImageSection = ({
 
       </div>
 
-    </section>
+    </section >
   )
 }
 

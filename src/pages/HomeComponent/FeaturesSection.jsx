@@ -1,4 +1,4 @@
-import { Zap, BrainCircuit, Clock, PiggyBank } from "lucide-react"
+import { Zap, BrainCircuit, Clock, Banknote } from "lucide-react"
 import SectionTitle from "./ServiceSectionComponent/SectionTitle";
 import FeatureCard from "./FeatureSectionComponent/FeatureCard";
 
@@ -23,7 +23,7 @@ const features = [
     description: "Whether it’s late-night drafting or urgent case research, our AI is always available.",
   },
   {
-    icon: PiggyBank,
+    icon: Banknote,
     title: "Cost-Effective",
     description: "Reduce overhead costs no salaries, no raises, just efficiency at a fraction of the price.",
   },

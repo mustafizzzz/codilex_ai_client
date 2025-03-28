@@ -5,7 +5,6 @@ import TestimonialCard from "./TestimonialSectionComponent/TestimonialCard";
 // Import your image
 import Section7Group from '../../assets/TestimonialSectionImage/Section7Group.png';
 
-// TODO in json format pass the data
 const testimonials = [
   {
     image: Section7Group,

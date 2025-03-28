@@ -9,9 +9,10 @@ const FreeTrailSection3 = () => {
 
   return (
     <ContentImageSection
-      subtitle="Smart Case File & Document Summarization"
-      title="Understand Legal Documents in Minutes"
-      description="Our AI-powered summarization tool analyzes case files, applications, summons, and other legal documents to extract key facts, issues, and arguments. It reduces reading time by presenting an easy-to-digest summary while preserving all essential legal details. Supporting multiple formats like PDFs, Word documents, and scanned images, this tool is designed to help legal professionals, judges, and researchers save time and improve workflow efficiency."
+      subtitle="Why Choose Us? Smarter. Faster. More Reliable."
+      title="Built for Everyone, Tailored for Lawyers."
+      highlightedText="Tailored for Lawyers."
+      description="Trained on vast legal databases, our AI delivers precise, reliable insights. Whether you're a lawyer or an individual, it streamlines legal work, saving time, money, and stress."
       buttonText="Start your Free Trial"
       buttonOnClick={handleButtonClick}
       image={Section5Group}
