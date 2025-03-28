@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import { CheckCircle } from 'lucide-react'
 import CountUp from 'react-countup'
-import AnimatedTooltip from './MissionSectionComponent/AnimatedTooltip'
+import AnimatedTooltip from '../../AceternityUi/AnimatedTooltip'
 
 const MissionSection = ({
   subtitle = "Our Mission",

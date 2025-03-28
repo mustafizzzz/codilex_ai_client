@@ -1,4 +1,4 @@
-import { Zap, Shield, Star, Settings } from "lucide-react"
+import { Zap, BrainCircuit, Clock, PiggyBank } from "lucide-react"
 import SectionTitle from "./ServiceSectionComponent/SectionTitle";
 import FeatureCard from "./FeatureSectionComponent/FeatureCard";
 
@@ -13,17 +13,17 @@ const features = [
     description: "No more waiting—get legal insights, case summaries, and drafts in seconds.",
   },
   {
-    icon: Shield,
+    icon: BrainCircuit,
     title: "AI-Trained for Law",
     description: "Built specifically for legal work, trained on extensive legal data and precedents.",
   },
   {
-    icon: Star,
+    icon: Clock,
     title: "Works 24/7",
     description: "Whether it’s late-night drafting or urgent case research, our AI is always available.",
   },
   {
-    icon: Settings,
+    icon: PiggyBank,
     title: "Cost-Effective",
     description: "Reduce overhead costs no salaries, no raises, just efficiency at a fraction of the price.",
   },

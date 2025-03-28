@@ -10,11 +10,12 @@ import automationBrandLogo from '../../assets/BrandLogoImage/automationBrandLogo
 import leafBrandLogo from '../../assets/BrandLogoImage/leafBrandLogo.png';
 import mindfulnessBrandLogo from '../../assets/BrandLogoImage/mindfulnessBrandLogo.png';
 import Section1Group from '../../assets/RingImage/Section1Group.png';
+import { FlipWords } from '@/AceternityUi/FlipWords';
 
 
 
 
-const CtaSection = () => {
+const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
 
   const brands = [
     { id: 1, src: greenishBrandLogo, alt: "Greenrush" },
@@ -22,6 +23,8 @@ const CtaSection = () => {
     { id: 3, src: leafBrandLogo, alt: "Leafe" },
     { id: 4, src: mindfulnessBrandLogo, alt: "Mindfulness" },
   ]
+
+  const words = ["revolutionize", "transform", "elevate", "streamline"];
 
   return (
 
@@ -34,13 +37,12 @@ const CtaSection = () => {
 
           {/* Left content column */}
           <div className="flex flex-col space-y-6 lg:pr-8 relative">
+
             <div className="space-y-6">
-              <h1 className="font-serif text-3xl md:text-4xl font-medium leading-tight">
-                Ready to revolutionize your <span className="block text-teal-400">legal practice with AI?</span>
+              <h1 className="font-serif text-3xl md:text-5xl font-medium leading-tight">
+                Ready to<FlipWords words={words} duration={1000} className="text-white" /><span className="block text-teal-400">{highlight}</span>
               </h1>
-              <p className="font-sans max-w-md">
-                Streamline legal research, draft documents faster, and analyse cases with precision using our AI powered legal tools.
-              </p>
+              <p className="font-sans max-w-md">{subtext}</p>
             </div>
 
             <div>
@@ -52,7 +54,7 @@ const CtaSection = () => {
                 >
                   <ChevronRight className="w-5 h-5" />
                 </div>
-                Ask Question
+                {buttonText}
               </Button>
             </div>
 
@@ -70,9 +72,6 @@ const CtaSection = () => {
                 ))}
               </div>
             </div>
-
-
-
 
           </div>
 

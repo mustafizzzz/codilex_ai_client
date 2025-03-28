@@ -12,7 +12,12 @@ import FreeTrailSection3 from './HomeComponent/FreeTrailSection3'
 const HomePage = () => {
   return (
     <>
-      <CtaSection />
+      <CtaSection
+        headline="Ready to revolutionize"
+        highlight="your legal practice with AI ?"
+        subtext="Streamline legal research, draft documents faster, and analyze cases with precision using our AI-powered legal tools."
+        buttonText="Ask Question"
+      />
       <ServicesSection />
       <FreeTrailSection1 />
       <FreeTrailSection2 />
