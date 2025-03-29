@@ -1,4 +1,7 @@
-import React from "react";
+"use client"
+import { WavyBackground } from "@/AceternityUi/WavyBackground"
+import { cn } from "../../lib/utils"
+
 
 const CTABanner = ({
   backgroundImage,
@@ -10,38 +13,48 @@ const CTABanner = ({
   className = "",
   paddingY = "py-16",
   onButtonClick,
+  waveColors = ["#0c4a6e", "#0369a1", "#0284c7"],
+  waveOpacity = 0.5,
+  waveSpeed = "fast",
+  waveBlur = 10,
+  waveWidth = 50,
 }) => {
   return (
-    <div className={`container mx-auto ${paddingY} ${className}`}>
-      <div className="relative bg-gray-200 rounded-xl overflow-hidden">
-        {/* Background image */}
-        {backgroundImage && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <img
-              src={backgroundImage}
-              alt="CTA background"
-              className="h-full w-full object-cover opacity-80"
-            />
-          </div>
-        )}
+    <div className={cn(`container mx-auto ${paddingY}`, className)}>
+      <div className="relative rounded-xl overflow-hidden mx-4 md:mx-1" style={{ minHeight: "200px" }}>
+        {/* WavyBackground component */}
+        <WavyBackground
+          colors={waveColors}
+          waveOpacity={waveOpacity}
+          speed={waveSpeed}
+          blur={waveBlur}
+          waveWidth={waveWidth}
+          backgroundFill="black"
+          containerClassName="absolute inset-0 w-full h-full"
+        >
+          {/* Empty div to ensure proper sizing */}
+          <div className="w-full h-full" />
+        </WavyBackground>
 
-        {/* Content */}
-        <div className="container mx-auto px-4 py-16 text-center relative z-10">
+
+
+        {/* Content - highest z-index to appear above everything */}
+        <div className="container mx-auto px-4 py-16 text-center relative">
           <h2 className={titleClassName}>{title}</h2>
           <button
             className={buttonClassName}
             onClick={(e) => {
-              if (onButtonClick) onButtonClick(e);
-              if (buttonHref) window.location.href = buttonHref;
+              if (onButtonClick) onButtonClick(e)
+              if (buttonHref) window.location.href = buttonHref
             }}
           >
             {buttonText}
           </button>
         </div>
-
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CTABanner;
+export default CTABanner
+

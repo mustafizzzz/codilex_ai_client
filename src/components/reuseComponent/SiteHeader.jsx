@@ -1,3 +1,5 @@
+import { ShootingStars } from "@/AceternityUi/ShootingStars";
+import { StarsBackground } from "@/AceternityUi/StarsBackground";
 import React from "react";
 
 const SiteHeader = ({
@@ -36,6 +38,7 @@ const SiteHeader = ({
 
     <div className={`container mx-auto px-4 ${paddingY} ${className}`}>
       <div className="relative bg-black text-white rounded-xl overflow-hidden">
+
         {backgroundImage && (
           <div className="absolute inset-0 flex items-center justify-center">
             <img
@@ -49,6 +52,10 @@ const SiteHeader = ({
           <h1 className={titleClassName}>{title}</h1>
           {description && <p className={descriptionClassName}>{description}</p>}
         </div>
+
+        <ShootingStars minDelay={2000} maxSpeed={10} />
+        <StarsBackground starDensity={0.00110} />
+
       </div>
     </div>
 

@@ -8,6 +8,9 @@ import ShinyButton from '@/AceternityUi/ShinyButton'
 import { HighlightText } from '@/AceternityUi/HighlightText'
 import { AnimatedTestimonials } from '@/AceternityUi/AnimatedTestimonials'
 import { TypewriterEffectSmooth } from '@/AceternityUi/TypewriterEffect '
+import { ShootingStars } from '@/AceternityUi/ShootingStars'
+import { StarsBackground } from '@/AceternityUi/StarsBackground'
+import { WavyBackground } from '@/AceternityUi/WavyBackground'
 
 
 
@@ -178,13 +181,27 @@ const TestPage = ({ className = "" }) => {
     //   <AnimatedTestimonials testimonials={testimonials} />
     // </div>
 
-    <div className="flex flex-col items-center justify-center h-[40rem] w-full bg-black">
-      <p className="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-white">
-        We give you <span className="font-semibold">legal assistance</span>{" "}
-        <TypewriterEffectSmooth words={words} /> {/* which is (white) */}
+    // <div className="flex flex-col items-center justify-center h-[40rem] w-full bg-black">
+    //   <p className="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-white">
+    //     We give you <span className="font-semibold">legal assistance</span>{" "}
+    //     <TypewriterEffectSmooth words={words} /> {/* which is (white) */}
 
+    //   </p>
+    // </div>
+
+    // <div className="h-[40rem] rounded-md bg-neutral-900 flex flex-col items-center justify-center relative w-full">
+    //   <ShootingStars minDelay={3000} starWidth={20} />
+    //   <StarsBackground starDensity={0.00060} maxTwinkleSpeed={0.5} />
+    // </div>
+
+    <WavyBackground colors={["#134E4A", "#0F172A", "#1E293B", "#475569", "#94A3B8"]} waveWidth={80}>
+      <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+        Hero waves are cool
       </p>
-    </div>
+      <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+        Leverage the power of canvas to create a beautiful hero section
+      </p>
+    </WavyBackground>
 
 
   )
