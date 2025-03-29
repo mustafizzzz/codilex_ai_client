@@ -22,7 +22,7 @@ const Footer = () => {
               </Link>
             </div>
             <p className="text-sm text-gray-300 font-sans">
-              Our AI-powered legal assistant revolutionizes legal workflows by providing instant, accurate, and efficient solutions for lawyers, law firms, and individuals. Whether you need quick legal insights or automated document processing, our AI optimizes efficiency, allowing professionals to focus on higher-value tasks.
+              Our AI-powered legal assistant streamlines legal workflows with instant insights and automated document processing, enhancing efficiency for lawyers, law firms, and individuals.
             </p>
           </div>
 

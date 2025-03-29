@@ -1,3 +1,5 @@
+import { HighlightText } from '@/AceternityUi/HighlightText'
+import ShinyButton from '@/AceternityUi/ShinyButton'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ChevronRight, Play } from 'lucide-react'
@@ -9,6 +11,7 @@ const VideoSection = ({
   videoUrl,
   subtitle = "Lorem Ipsum",
   title = "Lorem Ipsum is simply dummy",
+  highlightedText = "is simply",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit mattis ut tortor purus tincidunt sed lectus ut eros, turpis tincidunt id.",
   buttonText = "Start your Free Trial",
   buttonOnClick,
@@ -17,6 +20,7 @@ const VideoSection = ({
 
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const parts = title.split(new RegExp(`(${highlightedText})`, "gi"));
 
   return (
     <section className={cn("bg-black text-white py-35 mb-12", className)}>
@@ -64,10 +68,18 @@ const VideoSection = ({
           {/* Content */}
           <div className="space-y-6">
             <span className="text-teal-400 font-medium block font-serif">{subtitle}</span>
-            <h2 className="text-3xl md:text-5xl font-semibold font-serif">{title}</h2>
+            <h2 className="text-3xl md:text-5xl font-semibold font-serif leading-tight">
+              {parts.map((part, index) =>
+                part.toLowerCase() === highlightedText.toLowerCase() ? (
+                  <HighlightText key={index}>{part}</HighlightText>
+                ) : (
+                  part
+                )
+              )}
+            </h2>
             <p className="text-gray-300 font-sans">{description}</p>
 
-            <Button
+            {/* <Button
               onClick={buttonOnClick}
               className={cn("rounded-full px-2 py-2 font-medium  cursor-pointer flex items-center gap-2 bg-white text-black hover:bg-gray-200 transition-colors")}
             >
@@ -77,7 +89,11 @@ const VideoSection = ({
                 <ChevronRight />
               </div>
               {buttonText}
-            </Button>
+            </Button> */}
+
+            <ShinyButton onClick={buttonOnClick}>
+              {buttonText}
+            </ShinyButton>
 
           </div>
 

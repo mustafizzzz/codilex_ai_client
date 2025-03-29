@@ -15,7 +15,7 @@ const ContactInfo = ({ title, description, email, phone, address, socialLinks })
             <Mail className="text-white size-5" />
           </div>
           <div>
-            <h3 className="font-semibold font-serif">Our email</h3>
+            <h3 className="font-semibold font-serif">Our Email</h3>
             <p className="text-gray-600 font-sans">{email}</p>
           </div>
         </div>
@@ -25,7 +25,7 @@ const ContactInfo = ({ title, description, email, phone, address, socialLinks })
             <Phone className="text-white size-5" />
           </div>
           <div>
-            <h3 className="font-semibold font-serif">Call us</h3>
+            <h3 className="font-semibold font-serif">Call Us</h3>
             <p className="text-gray-600 font-sans">{phone}</p>
           </div>
         </div>
@@ -35,7 +35,7 @@ const ContactInfo = ({ title, description, email, phone, address, socialLinks })
             <MapPin className="text-white size-5" />
           </div>
           <div>
-            <h3 className="font-semibold font-serif">Find us</h3>
+            <h3 className="font-semibold font-serif">Find Us</h3>
             <p className="text-gray-600 font-sans">{address}</p>
           </div>
         </div>

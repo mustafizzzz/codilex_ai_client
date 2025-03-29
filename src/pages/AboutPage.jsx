@@ -91,6 +91,11 @@ const AboutPage = () => {
     { logo: logo6 || "/placeholder.svg?height=40&width=120", name: "Brand 6", url: "#" },
   ]
 
+  const words = [
+    { text: "and", className: "text-white text-3xl md:text-5xl font-semibold font-serif" }, // White animated text
+    { text: "always available.", className: "text-teal-400 text-3xl md:text-5xl font-semibold font-serif" }, // Animated in teal-400
+  ];
+
   const handleTrialButtonClick = () => {
     console.log("Trail button clicked in about");
 
@@ -106,8 +111,9 @@ const AboutPage = () => {
       <AboutHeroSection
         subtitle="Lorem Ipsum is simply dummy text"
         title="We give you legal assistance"
-        highlightedText="precise and always available"
-        afterHighlightedText="delivered swiftly"
+        highlightedText="which is instant, precise,"
+        afterHighlightedText="and always available."
+        words={words}
         description="Redefining legal efficiency with AI-powered precision."
         image={AboutSection1}
         buttonText="Contact Us"
@@ -118,8 +124,9 @@ const AboutPage = () => {
 
       <MissionSection
         subtitle="Our Mission"
-        title="Empowering Justice Through Innovation"
-        description="Our mission is to make legal knowledge and tools accessible to everyone—lawyers and litigants alike. By harnessing the power of AI, we simplify complex legal processes, save time, and empower you to make informed decisions with confidence."
+        title="Empowering Justice Through Innovation."
+        highlightedText="Through Innovation."
+        description="Our mission is to make legal knowledge and tools accessible to everyone, lawyers and litigants alike. By harnessing the power of AI, we simplify complex legal processes, save time, and empower you to make informed decisions with confidence."
 
         bulletPoints={[
           "Automating tedious legal tasks so lawyers can focus on what matters most— strategy and advocacy.",
@@ -146,9 +153,10 @@ const AboutPage = () => {
         videoThumbnail={videoThumbnail1 || "/placeholder.svg?height=400&width=600"}
         videoUrl="https://www.youtube.com/watch?v=eKSTaoSDrwI"
         subtitle="Transforming Access to Legal Support"
-        title="Bringing legal assistance to everyone, everywhere, with just a click."
-        description="Our AI-powered solutions aren't just for law firms; they empower individuals and businesses alike to navigate the legal landscape. Whether you're a small business owner, a litigant seeking affordable advice, or a legal professional looking to streamline your processes, we’re here to help. Our mission is to make legal services faster, more accessible, and affordable for all.With a focus on simplified legal information, document automation, and cost-effective solutions, we’re democratizing access to legal support."
-        buttonText="Start your Journey today"
+        title="Bringing legal assistance to everyone, everywhere with just a click."
+        highlightedText="everyone, everywhere"
+        description="Our AI-powered solutions simplify legal access for individuals, businesses, and professionals. From affordable advice to document automation, we make legal services faster, more accessible, and cost-effective for all."
+        buttonText="Start your Free Trail"
         buttonOnClick={handleTrialButtonClick}
       />
       <BrandsSection brands={brands} />

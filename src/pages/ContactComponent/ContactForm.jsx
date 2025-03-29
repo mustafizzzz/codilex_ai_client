@@ -55,8 +55,8 @@ const ContactForm = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
-            First name
+          <label htmlFor="firstName" className="block text-medium font-medium text-gray-700 mb-1 font-sans">
+            First Name
           </label>
           <input
             {...register("firstName")}
@@ -68,8 +68,8 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
-            Last name
+          <label htmlFor="lastName" className="block text-medium font-medium text-gray-700 mb-1 font-sans">
+            Last Name
           </label>
           <input
             {...register("lastName")}
@@ -81,7 +81,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
+          <label htmlFor="email" className="block text-medium font-medium text-gray-700 mb-1 font-sans">
             Email
           </label>
           <input
@@ -94,7 +94,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
+          <label htmlFor="phone" className="block text-medium font-medium text-gray-700 mb-1 font-sans">
             Phone
           </label>
           <input
@@ -109,7 +109,7 @@ const ContactForm = () => {
       </div>
 
       <div className="mb-6">
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-sans">
+        <label htmlFor="message" className="block text-medium font-medium text-gray-700 mb-1 font-sans">
           Message
         </label>
         <textarea
@@ -121,12 +121,12 @@ const ContactForm = () => {
         {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
       </div>
 
-      <Button type="submit" className="px-6 py-5 rounded-full cursor-pointer font-sans" disabled={submitContactFormMutation.isLoading}>
+      <Button type="submit" className="px-6 py-5 rounded-full cursor-pointer font-sans font-semibold" disabled={submitContactFormMutation.isLoading}>
         {submitContactFormMutation.isLoading ? "Submitting..." : "Submit Now"}
       </Button>
       {submitContactFormMutation.isError && <p className="text-red-500">Error submit form</p>}
       {submitContactFormMutation.isSuccess && <p className="text-green-500">Form submit successfully!</p>}
-    </form>
+    </form >
   )
 }
 

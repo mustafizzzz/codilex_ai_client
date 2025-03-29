@@ -51,6 +51,7 @@ const ProjectSection = () => {
   const handleTrialClick = () => {
     console.log("Trial button clicked")
   }
+
   return (
 
     <section className="pb-35 pt-35">
@@ -71,7 +72,7 @@ const ProjectSection = () => {
               <Button
                 onClick={handleTrialClick}
                 className={cn(
-                  "bg-black text-white px-4 py-4 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors cursor-pointer"
+                  "bg-black text-white px-4 py-4 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-gray-800 transition-colors cursor-pointer font-sans"
                 )}
               >
                 <ChevronRight className=" bg-white text-black rounded-full p-1 min-w-[22px] min-h-[22px]" />

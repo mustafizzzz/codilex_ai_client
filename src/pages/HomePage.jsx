@@ -63,10 +63,13 @@ const HomePage = () => {
       <FreeTrailSection2 />
       <FreeTrailSection3 />
       <FeaturesSection />
+
       <TestimonialsSection />
+
       <div className="border border-4 py-14">
         <AnimatedTestimonials testimonials={testimonials} />
       </div>
+
       <ProjectSection />
     </>
   )

@@ -3,10 +3,12 @@ import { cn } from '@/lib/utils'
 import { CheckCircle } from 'lucide-react'
 import CountUp from 'react-countup'
 import AnimatedTooltip from '../../AceternityUi/AnimatedTooltip'
+import { HighlightText } from '@/AceternityUi/HighlightText'
 
 const MissionSection = ({
   subtitle = "Our Mission",
   title = "Lorem ipsum is dummy text.",
+  highlightedText = "is dummy",
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit- et ut massa libero egestas malesuada viverra gravida libero cursus.",
 
   bulletPoints = [
@@ -29,6 +31,9 @@ const MissionSection = ({
 
   className = "",
 }) => {
+
+  const parts = title.split(new RegExp(`(${highlightedText})`, "gi"));
+
   return (
 
     <section className={cn("bg-black text-white py-16 md:py-24", className)}>
@@ -40,8 +45,16 @@ const MissionSection = ({
           <div className="lg:col-span-7 space-y-8 h-full flex flex-col justify-center">
 
             <div className="space-y-8">
-              <span className="text-teal-400 text-medium font-semibold font-serif">{subtitle}</span>
-              <h2 className="text-4xl md:text-6xl font-semibold mt-6 font-serif max-w-xl">{title}</h2>
+              <span className="text-teal-400 text-lg font-semibold font-serif">{subtitle}</span>
+              <h2 className="text-4xl md:text-6xl font-semibold mt-6 font-serif leading-tight">
+                {parts.map((part, index) =>
+                  part.toLowerCase() === highlightedText.toLowerCase() ? (
+                    <HighlightText key={index}>{part}</HighlightText>
+                  ) : (
+                    part
+                  )
+                )}
+              </h2>
               <p className="text-gray-300 max-w-xl font-sans">{description}</p>
             </div>
 

@@ -7,6 +7,7 @@ import { HoverBorderGradient } from '@/AceternityUi/HoverBorderGradient'
 import ShinyButton from '@/AceternityUi/ShinyButton'
 import { HighlightText } from '@/AceternityUi/HighlightText'
 import { AnimatedTestimonials } from '@/AceternityUi/AnimatedTestimonials'
+import { TypewriterEffectSmooth } from '@/AceternityUi/TypewriterEffect '
 
 
 
@@ -53,6 +54,15 @@ const TestPage = ({ className = "" }) => {
       designation: "VP of Technology at FutureNet",
       src: "https://dummyimage.com/250x300",
     },
+  ];
+
+  const words = [
+
+    { text: "which is", className: "text-white" }, // White animated text
+    { text: "instant,", className: "text-teal-400 font-semibold" }, // Animated in teal-400
+    { text: "precise,", className: "text-teal-400 font-semibold" }, // Animated in teal-400
+    { text: "and", className: "text-white" }, // White animated text
+    { text: "always available.", className: "text-teal-400 font-semibold" }, // Animated in teal-400
   ];
 
 
@@ -164,8 +174,16 @@ const TestPage = ({ className = "" }) => {
     //     This is an <HighlightText>animated text</HighlightText> effect using Framer Motion.
     //   </p>
     // </div>
-    <div>
-      <AnimatedTestimonials testimonials={testimonials} />
+    // <div>
+    //   <AnimatedTestimonials testimonials={testimonials} />
+    // </div>
+
+    <div className="flex flex-col items-center justify-center h-[40rem] w-full bg-black">
+      <p className="text-3xl md:text-4xl font-medium tracking-tight leading-tight text-white">
+        We give you <span className="font-semibold">legal assistance</span>{" "}
+        <TypewriterEffectSmooth words={words} /> {/* which is (white) */}
+
+      </p>
     </div>
 
 
