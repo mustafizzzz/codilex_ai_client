@@ -48,10 +48,10 @@ const ContactForm = () => {
 
 
 
-
   return (
 
     <form onSubmit={handleSubmit(handleContactUs)} className="bg-gray-100 p-8 rounded-lg">
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 
         <div>

@@ -1,5 +1,5 @@
 import TestimonialCardTest from '@/TestComponents/TestimonialCardTest.jsx'
-import React from 'react'
+import React, { useRef } from 'react'
 import Section7Ellipse from '../../src/assets/Section7Ellipse.png'
 import AnimatedTooltip from '@/TestComponents/AnimatedTooltip'
 import { Cover } from '@/AceternityUi/Cover'
@@ -11,6 +11,7 @@ import { TypewriterEffectSmooth } from '@/AceternityUi/TypewriterEffect '
 import { ShootingStars } from '@/AceternityUi/ShootingStars'
 import { StarsBackground } from '@/AceternityUi/StarsBackground'
 import { WavyBackground } from '@/AceternityUi/WavyBackground'
+import { Confetti, ConfettiButton } from '@/AceternityUi/ConfettiButtonComponent'
 
 
 
@@ -68,6 +69,7 @@ const TestPage = ({ className = "" }) => {
     { text: "always available.", className: "text-teal-400 font-semibold" }, // Animated in teal-400
   ];
 
+  const confettiRef = useRef(null);
 
 
   return (
@@ -194,14 +196,30 @@ const TestPage = ({ className = "" }) => {
     //   <StarsBackground starDensity={0.00060} maxTwinkleSpeed={0.5} />
     // </div>
 
-    <WavyBackground colors={["#134E4A", "#0F172A", "#1E293B", "#475569", "#94A3B8"]} waveWidth={80}>
-      <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
-        Hero waves are cool
-      </p>
-      <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-        Leverage the power of canvas to create a beautiful hero section
-      </p>
-    </WavyBackground>
+    // <WavyBackground colors={["#134E4A", "#0F172A", "#1E293B", "#475569", "#94A3B8"]} waveWidth={80}>
+    //   <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
+    //     Hero waves are cool
+    //   </p>
+    //   <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
+    //     Leverage the power of canvas to create a beautiful hero section
+    //   </p>
+    // </WavyBackground>
+
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        Confetti
+      </span>
+
+      <Confetti
+        ref={confettiRef}
+        className="absolute left-0 top-0 z-0 size-full"
+        onMouseEnter={() => {
+          if (confettiRef.current) {
+            confettiRef.current.fire({});
+          }
+        }}
+      />
+    </div>
 
 
   )
