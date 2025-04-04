@@ -38,7 +38,6 @@ function Layout() {
           <Route path="/verify-otp" element={<VerifyOtp />} />
           <Route path="/success" element={<SucessMessageCard />} />
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
 
           {/* Regular pages */}
           <Route path="/" element={<HomePage />} />

@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 
 
 const submitFormData = async (data) => {
-  const response = await axios.post(`http://localhost:8080/codilex/api/v1/lead/save`, {
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/lead/save`, {
     name: data.firstName,
     email: data.email,
     phoneNumber: data.phone,

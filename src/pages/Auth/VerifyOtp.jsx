@@ -166,7 +166,7 @@ function VerifyOtp() {
 
               <Button
                 type="submit"
-                className="w-full py-6 text-lg font-medium font-sans cursor-pointer"
+                className="w-full py-6 text-lg font-medium font-sans cursor-pointer bg-black"
               >
                 Submit
               </Button>

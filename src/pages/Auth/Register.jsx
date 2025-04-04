@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Link, useNavigate } from "react-router-dom"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useState } from "react"
+import axios from "axios"
 
 const Register = () => {
 
@@ -35,14 +36,28 @@ const Register = () => {
     },
   })
 
+  // console.log(`API is : ${import.meta.env.VITE_API_URL}`);
+
+
   const onSubmit = async (data) => {
+    console.log(data);
+
     setIsSubmitting(true)
     try {
       // In a real app, you would make an API call here
       // For demo purposes, we'll simulate the API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/create`, {
+        firstName: data.fullName,
+        lastName: data.lastName,
+        emailId: data.email,
+        mobileNumber: data.phone,
+        isPhoneNumberVerified: false,
+        isEmailIdVerified: false,
+        userType: "USER"
+      })
 
-      // Store user data in session storage for OTP verification
+      console.log("Registration response:", response.data);
+      alert(response.data);
       // sessionStorage.setItem("registrationData", JSON.stringify(data))
 
       // Navigate to OTP verification page
@@ -60,7 +75,7 @@ const Register = () => {
 
   return (
     <AuthLayout backgroundImage={AuthPageBackground}>
-      
+
 
       <div className="w-full max-w-sm mx-auto bg-white rounded-lg shadow-md p-6">
 
