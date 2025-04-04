@@ -22,6 +22,7 @@ import { useState } from "react"
 import axios from "axios"
 import { toast } from "sonner"
 
+
 const Register = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -64,8 +65,9 @@ const Register = () => {
 
       console.log("Registration response:", response.data);
 
-      sessionStorage.setItem("registrationData", JSON.stringify(response.data));
       toast.success("Registration successful! Redirecting to OTP verification...");
+
+      await new Promise((resolve) => setTimeout(resolve, 3000));// wait for 3 sec
       // Navigate to OTP verification page with phone number 
       navigate("/verify-otp", { state: { flow: "registration", phone: data.phone } });
     } catch (error) {

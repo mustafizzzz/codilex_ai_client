@@ -32,14 +32,6 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
-      // In a real app, you would make an API call here
-      // For demo purposes, we'll simulate the API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      // Store phone in session storage for OTP verification
-      // sessionStorage.setItem("loginData", JSON.stringify(data))
-
-      // Navigate to OTP verification page
       navigate("/verify-otp", { state: { flow: "login", phone: data.phone } })
     } catch (error) {
       console.error("Login error:", error)

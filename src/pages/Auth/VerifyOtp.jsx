@@ -76,8 +76,9 @@ function VerifyOtp() {
   const sendOtp = async () => {
     setIsSubmitting(true);
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/phone/${phone}`);
-      console.log("OTP data?:", response.data);
+      // const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/phone/${phone}`);
+      const response = await axios.get(`http://localhost:8080/codilex/api/v1/otp/phone/9999574213`);
+      console.log("OTP send data:", response.data);
 
       toast.success("OTP sent successfully to " + phone);
     } catch (error) {
@@ -95,13 +96,9 @@ function VerifyOtp() {
     setCountdown(50) // 30 seconds countdown
 
     try {
-
       await sendOtp();
-      setError("")
-
     } catch (error) {
       console.error("Resend OTP error:", error)
-      setError("Failed to resend OTP. Please try again.")
       toast.error("Failed to send OTP. Try again later.");
       setResendDisabled(false);
       setCountdown(0);
@@ -121,12 +118,21 @@ function VerifyOtp() {
     }
 
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/${data.pin}/phone/${phone}`);
-      const { jwt, refreshToken } = response.data;
+      // const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/${data.pin}/phone/${phone}`);
+
+      const response = await axios.get(`http://localhost:8080/codilex/api/v1/otp/123456/phone/9999574213`);
+      console.log("OTP verification data: ", response.data);
+
+      const { jwtToken, refreshToken, userProfile } = response.data.body;
 
       //  Store tokens in localStorage or sessionStorage
-      // localStorage.setItem("jwt", jwt);
-      // localStorage.setItem("refreshToken", refreshToken);
+      if (!jwtToken || !refreshToken || !userProfile) {
+        toast.error("Data not found. Please try again/");
+        return;
+      }
+      localStorage.setItem("jwt", jwtToken);
+      localStorage.setItem("refreshToken", refreshToken);
+      localStorage.setItem("user", JSON.stringify(userProfile));
 
       toast.success("OTP verified successfully!");
 
@@ -137,7 +143,7 @@ function VerifyOtp() {
       if (flow === "registration") {
         navigate("/success");
       } else if (flow === "login") {
-        navigate("/contact");
+        navigate("/");
       }
     } catch (error) {
       console.error("OTP verification error:", error);
