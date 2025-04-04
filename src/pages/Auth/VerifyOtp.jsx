@@ -22,6 +22,7 @@ import { Button } from '@/components/ui/button';
 import AuthLayout from '@/components/layout/AuthLayout';
 import AuthPageBackground from '../../assets/AuthPage/AuthPageBackground.png'
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -36,7 +37,17 @@ function VerifyOtp() {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const { flow, phone } = location.state || { flow: "registration", phone: "" }
+  const { flow, phone } = location.state || { flow: "registration", phone: "" };
+
+
+  useEffect(() => {
+    if (!phone) {
+      toast.error("Phone number is missing. Please register or login first.");
+      navigate("/login");
+      return;
+    }
+    sendOtp(); // Automatically send OTP when the page loads
+  }, []);
 
   const form = useForm({
     resolver: zodResolver(otpValidationSchema),
@@ -45,40 +56,8 @@ function VerifyOtp() {
     },
   });
 
-  const onSubmit = async (data) => {
-    const otpValue = data.pin;
-    console.log(data);
 
-    toast.success("You submitted the following values:", {
-      description: `${data.pin}`
-    });
-
-    try {
-      // In a real app, you would make an API call here
-      // For demo purposes, we'll simulate the API call and always succeed with "1234"
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      if (otpValue !== "1234") {
-        throw new Error("Invalid OTP. Please try again.")
-      }
-
-      if (flow === "registration") {
-        // Registration flow - navigate to success page
-        navigate("/sucess")
-      } else if (flow === "login") {
-        // Login flow - navigate to contact page
-        // In a real app, you would set authentication state here
-        // localStorage.setItem("isAuthenticated", "true")
-        navigate("/contact")
-      }
-    } catch (error) {
-      console.error("OTP verification error:", error)
-      setError(error.message || "Invalid OTP. Please try again.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
+  // For countdown
   useEffect(() => {
     let timer;
     if (countdown > 0) {
@@ -92,33 +71,88 @@ function VerifyOtp() {
     return () => clearTimeout(timer);
   }, [countdown]);
 
+
+  //to send otp
+  const sendOtp = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/phone/${phone}`);
+      console.log("OTP data?:", response.data);
+
+      toast.success("OTP sent successfully to " + phone);
+    } catch (error) {
+      console.error("OTP sending error:", error);
+      toast.error("Failed to send OTP. Try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const handleResend = async () => {
-    if (resendDisabled) return
+    if (resendDisabled) return;
 
     setResendDisabled(true)
     setCountdown(50) // 30 seconds countdown
 
     try {
-      // In a real app, you would make an API call here
-      // For demo purposes, we'll just simulate the API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
 
-      // Show success message
+      await sendOtp();
       setError("")
-      // You could show a success toast here
+
     } catch (error) {
       console.error("Resend OTP error:", error)
       setError("Failed to resend OTP. Please try again.")
-      setResendDisabled(false)
-      setCountdown(0)
+      toast.error("Failed to send OTP. Try again later.");
+      setResendDisabled(false);
+      setCountdown(0);
     }
   }
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+
+    const otpValue = data.pin;
+
+    //Only numbers, exact length 6
+    if (!/^\d{6}$/.test(otpValue)) {
+      toast.error("Invalid OTP. Please enter a 6-digit number.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/otp/${data.pin}/phone/${phone}`);
+      const { jwt, refreshToken } = response.data;
+
+      //  Store tokens in localStorage or sessionStorage
+      // localStorage.setItem("jwt", jwt);
+      // localStorage.setItem("refreshToken", refreshToken);
+
+      toast.success("OTP verified successfully!");
+
+      console.log("OTP sucess data:", response.data);
+
+
+      // Redirect based on flow
+      if (flow === "registration") {
+        navigate("/success");
+      } else if (flow === "login") {
+        navigate("/contact");
+      }
+    } catch (error) {
+      console.error("OTP verification error:", error);
+      toast.error("Invalid OTP. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <AuthLayout backgroundImage={AuthPageBackground}>
 
       <div className="flex justify-center items-center bg-gray-50 rounded-xl">
-        <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-md p-8">
+        <div className="w-full max-w-xl mx-auto bg-white rounded-lg shadow-md p-8">
+
           <div className="flex flex-col items-center mb-8">
             <h2 className="text-3xl font-semibold font-serif">Enter OTP</h2>
             <p className="text-center text-sm mt-3 font-sans">
@@ -134,29 +168,22 @@ function VerifyOtp() {
                 render={({ field }) => (
                   <FormItem className="flex flex-col items-center">
                     <FormControl>
+
                       <InputOTP
-                        maxLength={4}
+                        maxLength={6}
                         {...field}
-                        className="gap-4"
+                        className="gap-2"
                       >
-                        <InputOTPGroup className="gap-3">
-                          <InputOTPSlot
-                            index={0}
-                            className="w-16 h-16 text-2xl border-2 rounded-md"
-                          />
-                          <InputOTPSlot
-                            index={1}
-                            className="w-16 h-16 text-2xl border-2 rounded-md"
-                          />
-                          <InputOTPSlot
-                            index={2}
-                            className="w-16 h-16 text-2xl border-2 rounded-md"
-                          />
-                          <InputOTPSlot
-                            index={3}
-                            className="w-16 h-16 text-2xl border-2 rounded-md"
-                          />
+                        <InputOTPGroup className="gap-2 justify-center">
+                          {[0, 1, 2, 3, 4, 5].map((index) => (
+                            <InputOTPSlot
+                              key={index}
+                              index={index}
+                              className="w-12 h-12 text-xl border-2 rounded-md"
+                            />
+                          ))}
                         </InputOTPGroup>
+
                       </InputOTP>
                     </FormControl>
                     <FormMessage />
@@ -167,6 +194,7 @@ function VerifyOtp() {
               <Button
                 type="submit"
                 className="w-full py-6 text-lg font-medium font-sans cursor-pointer bg-black"
+                disabled={isSubmitting}
               >
                 Submit
               </Button>
@@ -192,6 +220,7 @@ function VerifyOtp() {
 
         </div>
       </div>
+
     </AuthLayout>
   );
 }

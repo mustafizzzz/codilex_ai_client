@@ -20,6 +20,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { Checkbox } from "@/components/ui/checkbox"
 import { useState } from "react"
 import axios from "axios"
+import { toast } from "sonner"
 
 const Register = () => {
 
@@ -44,8 +45,7 @@ const Register = () => {
 
     setIsSubmitting(true)
     try {
-      // In a real app, you would make an API call here
-      // For demo purposes, we'll simulate the API call
+
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/create`, {
         firstName: data.fullName,
         lastName: data.lastName,
@@ -53,17 +53,24 @@ const Register = () => {
         mobileNumber: data.phone,
         isPhoneNumberVerified: false,
         isEmailIdVerified: false,
-        userType: "USER"
+        termsAccepted: data.terms,
+        userType: "LITIGANT"
       })
 
-      console.log("Registration response:", response.data);
-      alert(response.data);
-      // sessionStorage.setItem("registrationData", JSON.stringify(data))
+      if (response.status !== 200) {
+        toast.error("Registration failed. Please try again.");
+        return;
+      }
 
-      // Navigate to OTP verification page
+      console.log("Registration response:", response.data);
+
+      sessionStorage.setItem("registrationData", JSON.stringify(response.data));
+      toast.success("Registration successful! Redirecting to OTP verification...");
+      // Navigate to OTP verification page with phone number 
       navigate("/verify-otp", { state: { flow: "registration", phone: data.phone } });
     } catch (error) {
-      console.error("Registration error:", error)
+      console.error("Registration error:", error);
+      toast.error(errorMessage);
       form.setError("root", {
         type: "manual",
         message: error.message || "Registration failed. Please try again.",

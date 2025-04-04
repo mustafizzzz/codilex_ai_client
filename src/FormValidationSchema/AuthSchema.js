@@ -11,8 +11,8 @@ export const registerSchema = z.object({
 })
 
 export const otpValidationSchema = z.object({
-  pin: z.string().min(4, {
-    message: "Your one-time password must be 4 characters.",
+  pin: z.string().min(6, {
+    message: "Your one-time password must be 6 digits.",
   }),
 });
 
