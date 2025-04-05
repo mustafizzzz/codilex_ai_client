@@ -40,6 +40,7 @@ const ContentImageSection = ({
           <div className={cn("relative", imageOnRight ? "md:order-2" : "md:order-1")}>
             <div className="rounded-lg overflow-hidden">
               <img src={image || "/placeholder.svg"} alt={title}
+                loading="lazy"
                 className="w-full h-auto object-cover
                 sm:max-w-[200px] md:max-w-[350px] lg:max-w-[450px] xl:max-w-[580px]" />
             </div>

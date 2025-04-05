@@ -66,6 +66,7 @@ const TestimonialsSection = () => {
       <div className="block h-150 lg:absolute lg:inset-0 lg:w-200 lg:h-full lg:overflow-hidden">
         <img
           src={testimonials[currentIndex].image}
+          loading="lazy"
           alt="Testimonial"
           className="w-full h-full object-cover"
         />

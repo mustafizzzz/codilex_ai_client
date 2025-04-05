@@ -13,6 +13,7 @@ import VerifyOtp from './pages/Auth/VerifyOtp'
 import { Toaster } from "@/components/ui/sonner"
 import SucessMessageCard from './pages/Auth/SucessMessageCard'
 import Login from './pages/Auth/Login'
+import { AuthProvider } from './Context/AuthContext'
 
 
 const queryClient = new QueryClient();
@@ -58,7 +59,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Layout />
+        <AuthProvider>
+          <Layout />
+        </AuthProvider>
       </Router>
       <Toaster />
     </QueryClientProvider>

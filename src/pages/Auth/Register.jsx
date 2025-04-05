@@ -21,6 +21,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { useState } from "react"
 import axios from "axios"
 import { toast } from "sonner"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 
 const Register = () => {
@@ -38,7 +39,7 @@ const Register = () => {
     },
   })
 
-  // console.log(`API is : ${import.meta.env.VITE_API_URL}`);
+  // console.log(`API is : ${import.meta.env.VITE_API_URL}`); [LITIGANT, OTHERS, LAWYER]
 
 
   const onSubmit = async (data) => {
@@ -55,7 +56,7 @@ const Register = () => {
         isPhoneNumberVerified: false,
         isEmailIdVerified: false,
         termsAccepted: data.terms,
-        userType: "LITIGANT"
+        userType: data.userType
       })
 
       if (response.status !== 200) {
@@ -72,7 +73,7 @@ const Register = () => {
       navigate("/verify-otp", { state: { flow: "registration", phone: data.phone } });
     } catch (error) {
       console.error("Registration error:", error);
-      toast.error(errorMessage);
+      toast.error(error.message);
       form.setError("root", {
         type: "manual",
         message: error.message || "Registration failed. Please try again.",
@@ -158,6 +159,32 @@ const Register = () => {
 
             <FormField
               control={form.control}
+              name="userType"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start justify-center space-x-1 space-y-0">
+                  <div className="space-y-1 leading-none w-full flex flex-col items-center justify-center">
+                    <div className="w-full flex gap-2 items-center">
+                      <FormControl>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <SelectTrigger className="w-full text-sm rounded-full p-6 border border-black font-sans">
+                            <SelectValue placeholder="Select user type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="LITIGANT">LITIGANT</SelectItem>
+                            <SelectItem value="LAWYER">LAWYER</SelectItem>
+                            <SelectItem value="OTHERS">OTHERS</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                    </div>
+                    <FormMessage className="text-xs" />
+                  </div>
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
               name="terms"
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start justify-center space-x-1 space-y-0">
@@ -173,6 +200,8 @@ const Register = () => {
                 </FormItem>
               )}
             />
+
+
 
             {form.formState.errors.root && <p className="text-sm text-red-500">{form.formState.errors.root.message}</p>}
 

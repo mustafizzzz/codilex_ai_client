@@ -23,6 +23,7 @@ import AuthLayout from '@/components/layout/AuthLayout';
 import AuthPageBackground from '../../assets/AuthPage/AuthPageBackground.png'
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '@/Context/AuthContext';
 
 
 
@@ -32,6 +33,9 @@ function VerifyOtp() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [countdown, setCountdown] = useState(50);
   const [resendDisabled, setResendDisabled] = useState(true);
+
+  // context for user auth
+  const { login } = useAuth();
 
 
   const location = useLocation()
@@ -123,27 +127,29 @@ function VerifyOtp() {
       const response = await axios.get(`http://localhost:8080/codilex/api/v1/otp/123456/phone/9999574213`);
       console.log("OTP verification data: ", response.data);
 
-      const { jwtToken, refreshToken, userProfile } = response.data.body;
+      const { jwtToken, refreshToken, userProfile, expiresIn } = response.data.body;
 
       //  Store tokens in localStorage or sessionStorage
       if (!jwtToken || !refreshToken || !userProfile) {
-        toast.error("Data not found. Please try again/");
+        toast.error("Data not found. Please try again");
         return;
       }
-      localStorage.setItem("jwt", jwtToken);
-      localStorage.setItem("refreshToken", refreshToken);
-      localStorage.setItem("user", JSON.stringify(userProfile));
 
       toast.success("OTP verified successfully!");
 
       console.log("OTP sucess data:", response.data);
 
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
 
       // Redirect based on flow
       if (flow === "registration") {
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         navigate("/success");
       } else if (flow === "login") {
-        navigate("/");
+        // Call login function with expiration time
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        login(jwtToken, refreshToken, userProfile, expiresIn);
       }
     } catch (error) {
       console.error("OTP verification error:", error);

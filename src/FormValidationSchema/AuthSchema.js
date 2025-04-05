@@ -5,6 +5,9 @@ export const registerSchema = z.object({
   lastName: z.string().min(2, { message: "Last name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().regex(/^\d{10}$/, "Phone number must be 10 digits"),
+  userType: z.enum(["LITIGANT", "LAWYER", "OTHERS"], {
+    required_error: "Please select a user type",
+  }),
   terms: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms and conditions",
   }),

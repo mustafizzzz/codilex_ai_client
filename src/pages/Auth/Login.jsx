@@ -32,6 +32,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true)
     try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       navigate("/verify-otp", { state: { flow: "login", phone: data.phone } })
     } catch (error) {
       console.error("Login error:", error)
