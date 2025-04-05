@@ -9,6 +9,7 @@ const ProjectCard = ({ image, title, description, link = "#", className = "" }) 
         <img
           src={image || "/placeholder.svg"}
           alt={title}
+          loading="lazy"
           className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>

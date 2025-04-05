@@ -13,6 +13,7 @@ import VerifyOtp from './pages/Auth/VerifyOtp'
 import { Toaster } from "@/components/ui/sonner"
 import SucessMessageCard from './pages/Auth/SucessMessageCard'
 import Login from './pages/Auth/Login'
+import { AuthProvider } from './Context/AuthContext'
 
 
 const queryClient = new QueryClient();
@@ -38,7 +39,6 @@ function Layout() {
           <Route path="/verify-otp" element={<VerifyOtp />} />
           <Route path="/success" element={<SucessMessageCard />} />
           <Route path="/login" element={<Login />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
 
           {/* Regular pages */}
           <Route path="/" element={<HomePage />} />
@@ -59,7 +59,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <Layout />
+        <AuthProvider>
+          <Layout />
+        </AuthProvider>
       </Router>
       <Toaster />
     </QueryClientProvider>
