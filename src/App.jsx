@@ -14,6 +14,7 @@ import { Toaster } from "@/components/ui/sonner"
 import SucessMessageCard from './pages/Auth/SucessMessageCard'
 import Login from './pages/Auth/Login'
 import { AuthProvider } from './Context/AuthContext'
+import QuestionAnswer from './pages/QuestionAnswer'
 
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ function Layout() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/qna" element={<QuestionAnswer />} />
           <Route path="/test" element={<TestPage />} />
         </Routes>
       </main>

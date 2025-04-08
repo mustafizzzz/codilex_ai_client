@@ -44,6 +44,7 @@ const SiteHeader = ({
             <img
               src={backgroundImage}
               alt="Section background"
+              loading="lazy"
               className="h-full w-full object-cover opacity-80"
             />
           </div>
@@ -53,8 +54,8 @@ const SiteHeader = ({
           {description && <p className={descriptionClassName}>{description}</p>}
         </div>
 
-        <ShootingStars minDelay={2000} maxSpeed={10} />
-        <StarsBackground starDensity={0.00110} />
+        <ShootingStars minDelay={1000} maxSpeed={10} />
+        <StarsBackground starDensity={0.00180} />
 
       </div>
     </div>
