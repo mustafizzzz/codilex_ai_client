@@ -7,3 +7,22 @@ Summarize the footer text (eye catchy)
 check the grammer in about first section and remove the animation
 
 contact from increase the font size and second letter caps
+
+
+chat-->
+only one question and after that next new questiono no prior context
+
+
+login->jwt refr(local)
+
+page->login->1hours
+auth refrsh  before save automatic
+
+page->login->50min
+30min
+login
+
+ 1 hours
+jwt->expier
+
+unauth=>status 403

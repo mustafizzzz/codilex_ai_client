@@ -15,6 +15,7 @@ import SucessMessageCard from './pages/Auth/SucessMessageCard'
 import Login from './pages/Auth/Login'
 import { AuthProvider } from './Context/AuthContext'
 import QuestionAnswer from './pages/QuestionAnswer'
+import QuestionAnswerTest from './pages/QuestionAnswerTest'
 
 
 const queryClient = new QueryClient();
@@ -23,7 +24,7 @@ function Layout() {
   const location = useLocation();
 
   // Define authentication-related routes
-  const authRoutes = ["/register", "/verify-otp", "/registration-success", "/success", "/login"];
+  const authRoutes = ["/register", "/verify-otp", "/registration-success", "/success", "/login", "/qna", "/qnaTest"];
 
   // Check if the current route is an auth page
   const isAuthPage = authRoutes.includes(location.pathname);
@@ -47,6 +48,7 @@ function Layout() {
           <Route path="/news" element={<NewsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/qna" element={<QuestionAnswer />} />
+          <Route path="/qnaTest" element={<QuestionAnswerTest />} />
           <Route path="/test" element={<TestPage />} />
         </Routes>
       </main>

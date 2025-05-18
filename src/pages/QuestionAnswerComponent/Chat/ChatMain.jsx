@@ -9,10 +9,13 @@ const ChatMain = ({ className = "" }) => {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null)
 
+
   // Scroll to bottom when messages change
-  // useEffect(() => {
-  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  // }, [messages])
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth", block: "end" })
+    }
+  }, [messages, isLoading])
 
   const handleSendMessage = async (content) => {
     if (!content.trim()) return
@@ -45,20 +48,24 @@ const ChatMain = ({ className = "" }) => {
   return (
 
 
-    <div className={`flex flex-col h-screen ${className}`}>
+    <div className={`flex flex-col h-full  ${className}`}>
       {/* Header */}
       <div className="border-b p-4">
         <h2 className="font-semibold text-2xl font-serif">Ask Anything...</h2>
       </div>
 
       {/* Scrollable Chat Messages */}
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4" style={{ overflowAnchor: "none" }}>
         <ChatMessageList messages={messages} isLoading={isLoading} />
-        <div ref={messagesEndRef} />
+        <div ref={messagesEndRef} style={{ height: "1px", width: "100%" }} />
       </div>
 
       {/* Fixed Chat Input */}
-      <div className="sticky bottom-0 bg-white border-t p-4 z-10">
+      {/* <div className="sticky bottom-0 bg-white border-t p-4 z-10">
+        <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+      </div> */}
+
+      <div className="border-t p-4 bg-background">
         <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
       </div>
 
