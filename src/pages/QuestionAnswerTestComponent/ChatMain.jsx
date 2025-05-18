@@ -56,7 +56,7 @@ const ChatMain = ({ activeDraft }) => {
 
   return (
     <div className="flex-1 flex flex-col h-full">
-      <ChatHeader title={activeDraft?.title || "Ask anything.."} />
+      <ChatHeader title={"Ask anything..."} />
 
       <div className="flex-1 overflow-y-auto">
         <ChatMessageList messages={messages} isLoading={isLoading} messagesEndRef={messagesEndRef} />

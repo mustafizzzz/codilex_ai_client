@@ -31,14 +31,14 @@ const ChatInput = ({ onSendMessage, isLoading }) => {
 
   return (
     <form onSubmit={handleSubmit} className="relative">
-      <div className="relative flex items-center bg-background border border-input rounded-full px-4 py-2 shadow-sm focus-within:ring-1 focus-within:ring-ring">
+      <div className="relative flex items-center bg-white border border-gray-300 rounded-full px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-primary">
         <Textarea
           ref={textareaRef}
           placeholder="Type your question here or draft..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 resize-none border-0 bg-transparent p-0 focus-visible:ring-0 focus-visible:ring-offset-0 max-h-32"
+          className="flex-1 resize-none border-none bg-transparent focus:ring-0 focus-visible:ring-0 min-h-12 pl-0 pr-14 py-0 text-sm shadow-none"
           disabled={isLoading}
           rows={1}
         />
@@ -46,7 +46,7 @@ const ChatInput = ({ onSendMessage, isLoading }) => {
         <Button
           type="submit"
           size="icon"
-          className="absolute right-2 rounded-full h-8 w-8"
+          className="absolute right-2 rounded-full h-10 w-10"
           disabled={isLoading || !input.trim()}
         >
           <SendHorizontal className="h-4 w-4" />

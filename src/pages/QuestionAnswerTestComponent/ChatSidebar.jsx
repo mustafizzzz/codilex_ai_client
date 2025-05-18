@@ -4,9 +4,9 @@ import React from 'react'
 
 const ChatSidebar = ({ drafts, onDraftClick }) => {
   return (
-    <div className="w-64 border-r border-border flex flex-col h-full">
+    <div className="w-full md:w-64 border-r border-border flex flex-col h-full bg-background">
       <div className="p-4 border-b">
-        <h2 className="font-semibold">Drafts</h2>
+        <h1 className="font-semibold text-xl">Drafts</h1>
       </div>
 
       <div className="flex-1 overflow-auto">
@@ -15,11 +15,11 @@ const ChatSidebar = ({ drafts, onDraftClick }) => {
             <Button
               key={draft.id}
               variant={draft.active ? "secondary" : "ghost"}
-              className="justify-start"
+              className="justify-start cursor-pointer"
               onClick={() => onDraftClick(draft.id)}
             >
               <div
-                className={`w-6 h-6 rounded-full flex items-center justify-center mr-2 ${draft.active ? "bg-black text-white" : "bg-gray-200"}`}
+                className={`w-8 h-8 rounded-full flex items-center justify-center mr-2 ${draft.active ? "bg-black text-white" : "bg-gray-200"}`}
               >
                 <MessageSquare className="w-3 h-3" />
               </div>
@@ -30,7 +30,7 @@ const ChatSidebar = ({ drafts, onDraftClick }) => {
       </div>
 
       <div className="p-4 border-t">
-        <Button variant="outline" className="w-full justify-start">
+        <Button variant="outline" className="w-full justify-start cursor-pointer">
           <PlusCircle className="mr-2 h-4 w-4" />
           New Chat
         </Button>

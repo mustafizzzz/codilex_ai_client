@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ChatHeader = ({ title }) => {
+const ChatHeader = ({ title = "Lorem Ipsum" }) => {
   return (
     <div className="border-b p-4 flex items-center justify-between">
       <h2 className="font-semibold text-xl">{title}</h2>

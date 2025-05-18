@@ -30,7 +30,7 @@ const ChatInterface = () => {
   // Desktop view renders sidebar and main content side by side
   if (isDesktop) {
     return (
-      <div className="flex">
+      <div className="flex h-screen">
         <ChatSidebar drafts={drafts} onDraftClick={handleDraftClick} className="w-64 border-r" />
         <ChatMain className="flex-1" />
       </div>
