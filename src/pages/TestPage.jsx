@@ -12,6 +12,7 @@ import { ShootingStars } from '@/AceternityUi/ShootingStars'
 import { StarsBackground } from '@/AceternityUi/StarsBackground'
 import { WavyBackground } from '@/AceternityUi/WavyBackground'
 import { Confetti, ConfettiButton } from '@/AceternityUi/ConfettiButtonComponent'
+import axios from 'axios'
 
 
 
@@ -70,6 +71,26 @@ const TestPage = ({ className = "" }) => {
   ];
 
   const confettiRef = useRef(null);
+
+  const uploadeOCR = async (file) => {
+    console.log("File is:", file);
+
+    const formData = new FormData();
+    formData.append('file', file);
+    try {
+      const response = await axios.post('http://localhost:8080/codilex/api/v1/ocr/upload', formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      });
+
+      console.log("OCR Response:", response.data);
+
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
+  }
 
 
   return (
@@ -205,21 +226,29 @@ const TestPage = ({ className = "" }) => {
     //   </p>
     // </WavyBackground>
 
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-        Confetti
-      </span>
+    // <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+    //   <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+    //     Confetti
+    //   </span>
 
-      <Confetti
-        ref={confettiRef}
-        className="absolute left-0 top-0 z-0 size-full"
-        onMouseEnter={() => {
-          if (confettiRef.current) {
-            confettiRef.current.fire({});
-          }
-        }}
-      />
-    </div>
+    //   <Confetti
+    //     ref={confettiRef}
+    //     className="absolute left-0 top-0 z-0 size-full"
+    //     onMouseEnter={() => {
+    //       if (confettiRef.current) {
+    //         confettiRef.current.fire({});
+    //       }
+    //     }}
+    //   />
+    // </div>
+
+    <input
+      type='file'
+      onChange={(e) => {
+        if (!e.target.files) return;
+        uploadeOCR(e.target.files[0]);
+      }}
+    />
 
 
   )
