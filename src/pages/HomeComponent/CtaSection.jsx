@@ -12,6 +12,7 @@ import mindfulnessBrandLogo from '../../assets/BrandLogoImage/mindfulnessBrandLo
 import Section1Group from '../../assets/RingImage/Section1Group.png';
 import { FlipWords } from '@/AceternityUi/FlipWords';
 import { HoverBorderGradient } from '@/AceternityUi/HoverBorderGradient';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -26,6 +27,8 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
   ]
 
   const words = ["revolutionize", "transform", "elevate", "streamline"];
+
+  const navigate = useNavigate();
 
   return (
 
@@ -46,17 +49,17 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
               <p className="font-sans max-w-md">{subtext}</p>
             </div>
 
-            <div>
+            <div onClick={() => navigate("/qnaTest")}>
               <HoverBorderGradient
                 containerClassName="rounded-full border border-0" // Light border for visibility
                 as="button"
                 className="bg-black text-white flex items-center space-x-2 border border-gray-600 cursor-pointer font-semibold font-sans gap-2"
-
               >
 
                 <div
                   className="p-1 rounded-full bg-white text-black cursor-pointer hover:bg-gray-800 transition-colors"
                   aria-label="Previous testimonial"
+
                 >
                   <ChevronRight className="w-4 h-4" />
                 </div>
