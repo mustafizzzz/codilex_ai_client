@@ -78,7 +78,7 @@ const QuestionAnswerTest = () => {
           setSelectedOption={setSelectedOption}
           options={options}
         />
-        <ChatMain activeDraft={activeDraft} selectedOption={selectedOption} />
+        <ChatMain activeDraft={activeDraft} selectedOption={selectedOption} setSelectedOption={setSelectedOption} setDialogOpen={setDialogOpen} />
       </ChatLayout>
     )
   }

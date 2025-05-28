@@ -5,12 +5,15 @@ import ChatInput from './ChatInput'
 import axios from 'axios'
 import { useAuth } from '@/Context/AuthContext'
 
-const ChatMain = ({ activeDraft }) => {
+const ChatMain = ({ activeDraft, selectedOption, setSelectedOption, setDialogOpen }) => {
   const [messages, setMessages] = useState(activeDraft?.messages || [])
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null);
+  const [hasAskedQuestion, setHasAskedQuestion] = useState(false)
   const { token } = useAuth();
   console.log("Token is :", token);
+  console.log("User selected options:", selectedOption);
+
 
 
   // Update messages when active draft changes
@@ -32,43 +35,17 @@ const ChatMain = ({ activeDraft }) => {
   }
 
   const handleSendMessage = async (content) => {
+    if (hasAskedQuestion) return
     if (!content.trim()) return
+    console.log("Content to send:", content);
+
 
     //api testing for asking a question
     try {
-
-      // draft case API
-      // const response = await axios.post(
-      //   "http://localhost:8080/codilex/api/v1/lawyer/draft-case",
-      //   {
-      //     caseDetails: "A dispute between two parties over a contract agreement breach.",
-      //   },
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //       "Content-Type": "application/json",
-      //     },
-      //   }
-      // );
-
-      // Summary API
-      // const response = await axios.post(
-      //   "http://localhost:8080/codilex/api/v1/lawyer/generate-summary",
-      //   {
-      //     documentText: "This document describes the contractual obligations between two business entities and the timeline for delivery of goods.",
-      //   },
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer ${token}`,
-      //       "Content-Type": "application/json",
-      //     },
-      //   }
-      // );
-
       const response = await axios.post(
-        "http://localhost:8080/codilex/api/v1/litigant/ask",
+        `http://localhost:8080/codilex/api/v1${selectedOption.endpoint}`,
         {
-          question: "What is the limitation period for filing a civil suit?",
+          [selectedOption.payloadKey]: content,
         },
         {
           headers: {
@@ -78,35 +55,46 @@ const ChatMain = ({ activeDraft }) => {
         }
       );
 
-      console.log("Answer:", response.data);
+      console.log("Answer:", response.data.body);
 
-    } catch (error) {
-      console.error("Error asking question:", error.response?.data || error.message);
-    }
-
-    // Add user message
-    const userMessage = {
-      id: Date.now().toString(),
-      content,
-      sender: "user",
-      timestamp: new Date().toISOString(),
-    }
-
-    setMessages((prev) => [...prev, userMessage])
-    setIsLoading(true)
-
-    // Simulate API call for bot response
-    setTimeout(() => {
-      const botMessage = {
-        id: (Date.now() + 1).toString(),
-        content: `This is a response to: "${content}"`,
-        sender: "bot",
+      const userMessage = {
+        id: Date.now().toString(),
+        content,
+        sender: "user",
         timestamp: new Date().toISOString(),
       }
 
+      setMessages((prev) => [...prev, userMessage])
+      setIsLoading(true);
+
+      const botMessage = {
+        id: (Date.now() + 1).toString(),
+        content: response?.data?.body || JSON.stringify(response?.data?.body),
+        sender: "bot",
+        timestamp: new Date().toISOString(),
+      };
+
       setMessages((prev) => [...prev, botMessage])
-      setIsLoading(false)
-    }, 1000)
+      setIsLoading(false);
+      setHasAskedQuestion(true)
+
+    } catch (error) {
+      console.error("Error asking question:", error.response?.data || error.message);
+      return;
+    }
+    // Simulate API call for bot response
+    // setTimeout(() => {
+    //   const botMessage = {
+    //     id: (Date.now() + 1).toString(),
+    //     content: `This is a response to: "${content}"`,
+    //     sender: "bot",
+    //     timestamp: new Date().toISOString(),
+    //   }
+
+    //   setMessages((prev) => [...prev, botMessage])
+    //   setIsLoading(false)
+    // }, 1000);
+
 
   }
 
@@ -119,7 +107,16 @@ const ChatMain = ({ activeDraft }) => {
       </div>
 
       <div className="border-t p-4">
-        <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
+        <ChatInput
+          onSendMessage={handleSendMessage}
+          isLoading={isLoading}
+          hasAskedQuestion={hasAskedQuestion}
+          onAskAgain={() => {
+            setMessages([])
+            setHasAskedQuestion(false)
+            setSelectedOption(null)
+            setDialogOpen(true)
+          }} />
       </div>
     </div>
   )
