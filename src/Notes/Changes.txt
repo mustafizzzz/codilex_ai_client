@@ -23,6 +23,26 @@ page->login->50min
 login
 
  1 hours
-jwt->expier
+jwt->expire
 
 unauth=>status 403
+
+//changes by shiddhart
+1. image change on first page 
+
+2. word usko mobile responsive pe handel --> done
+3. ask question --> ask our ai in first page -->done
+4. trusted by section will be removed -->done
+5. first page section 2 lorem ipsum text change -->done
+
+6. photos of first page section change
+
+7.Why Choose Us?<- removed Smarter. Faster. More Reliable. -->done
+8. what stets apart section lorem->check whatsapp -->done
+
+10. testimonials no photo only text cards check whatsapp
+
+11. partner with us -> photos changes and button text->contact us -->done button text only
+
+12.logo removed -->done
+

@@ -43,8 +43,8 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
           <div className="flex flex-col space-y-6 lg:pr-8 relative">
 
             <div className="space-y-6">
-              <h1 className="font-serif text-3xl md:text-5xl font-medium leading-tight">
-                Ready to<FlipWords words={words} duration={1000} className="text-white" /><span className="block text-teal-400">{highlight}</span>
+              <h1 className="font-serif text-2xl md:text-5xl font-medium leading-tight">
+                Ready to<FlipWords words={words} duration={1000} className="text-white" /><h1 className="block text-teal-400 text-xl md:text-4xl">{highlight}</h1>
               </h1>
               <p className="font-sans max-w-md">{subtext}</p>
             </div>
@@ -74,14 +74,14 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
             </div>
 
             {/* Brands */}
-            <div className="pt-20">
+            {/* <div className="pt-20">
               <p className="font-serif text-sm font-medium text-teal-300 mb-5 lg:mb-2 ml-3">Trusted by Leading Brands</p>
               <div className="flex flex-wrap gap-8">
                 {brands.map((brand) => (
                   <BrandLogo key={brand.id} src={brand.src} alt={brand.alt} />
                 ))}
               </div>
-            </div>
+            </div> */}
 
           </div>
 

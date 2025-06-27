@@ -9,7 +9,7 @@ const FreeTrailSection3 = () => {
 
   return (
     <ContentImageSection
-      subtitle="Why Choose Us? Smarter. Faster. More Reliable."
+      subtitle="Smarter. Faster. More Reliable."
       title="Built for Everyone, Tailored for Lawyers."
       highlightedText="Tailored for Lawyers."
       description="Trained on vast legal databases, our AI delivers precise, reliable insights. Whether you're a lawyer or an individual, it streamlines legal work, saving time, money, and stress."

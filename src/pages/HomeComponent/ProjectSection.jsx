@@ -76,7 +76,7 @@ const ProjectSection = () => {
                 )}
               >
                 <ChevronRight className=" bg-white text-black rounded-full p-1 min-w-[22px] min-h-[22px]" />
-                Start your Free Trial
+                Contact Us
               </Button>
 
             </div>
