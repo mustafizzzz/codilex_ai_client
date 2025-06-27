@@ -39,10 +39,10 @@ unauth=>status 403
 
 7.Why Choose Us?<- removed Smarter. Faster. More Reliable. -->done
 8. what stets apart section lorem->check whatsapp -->done
+10. testimonials no photo only text cards check whatsapp -->done
 
-10. testimonials no photo only text cards check whatsapp
+11. partner with us -> photos changes
 
-11. partner with us -> photos changes and button text->contact us -->done button text only
-
+button text->contact us -->done button text only
 12.logo removed -->done
 

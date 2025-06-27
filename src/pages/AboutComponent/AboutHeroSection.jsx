@@ -26,7 +26,7 @@ const AboutHeroSection = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-1 md:p-8">
 
           {/* Left Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 py-4">
             <p className="text-sm text-gray-300 font-sans">{subtitle}</p>
 
             {/* Original Text */}
@@ -37,7 +37,7 @@ const AboutHeroSection = ({
             </h1> */}
 
             {/* Type writer animation */}
-            <h1 className="text-3xl md:text-5xl font-semibold leading-tight font-serif">
+            <h1 className="text-2xl md:text-5xl font-semibold leading-tight font-serif">
               {title} <br />
               <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
               <span className="block">

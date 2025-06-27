@@ -32,10 +32,10 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
 
   return (
 
-    <section className="relative w-full bg-black text-white overflow-hidden">
+    <section className="relative w-full bg-black text-white overflow-hidden py-10 md:py-20">
 
       {/* Main container with relative positioning */}
-      <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative">
+      <div className="container mx-auto px-4 md:px-30 py-4 md:py-24 relative">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center px-4">
 

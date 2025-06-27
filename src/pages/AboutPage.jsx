@@ -92,8 +92,8 @@ const AboutPage = () => {
   ]
 
   const words = [
-    { text: "and", className: "text-white text-3xl md:text-5xl font-semibold font-serif" }, // White animated text
-    { text: "always available.", className: "text-teal-400 text-3xl md:text-5xl font-semibold font-serif" }, // Animated in teal-400
+    { text: "and", className: "text-white text-2xl md:text-5xl font-semibold font-serif" }, // White animated text
+    { text: "always available.", className: "text-teal-400 text-2xl md:text-5xl font-semibold font-serif" }, // Animated in teal-400
   ];
 
   const handleTrialButtonClick = () => {
