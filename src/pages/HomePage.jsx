@@ -66,9 +66,9 @@ const HomePage = () => {
 
       <TestimonialsSection />
 
-      <div className="border border-4 py-14">
+      {/* <div className=" border-4 py-14">
         <AnimatedTestimonials testimonials={testimonials} />
-      </div>
+      </div> */}
 
       <ProjectSection />
     </>
