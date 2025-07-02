@@ -9,7 +9,7 @@ import AboutHeroSection from './AboutComponent/AboutHeroSection'
 
 
 import teamMember1 from '.././assets/TeamMemberImage/teamMember1.png'
-import teamMember2 from '.././assets/TeamMemberImage/teamMember2.png'
+import teamMember2 from '.././assets/TeamMemberImage/teamMember2.jpeg'
 import teamMember3 from '.././assets/TeamMemberImage/teamMember3.png'
 import videoThumbnail1 from '.././assets/VideoThumbnail/videoThumbnail1.png'
 
@@ -31,24 +31,16 @@ const AboutPage = () => {
   const teamMembers = [
     {
       image: teamMember1 || "/placeholder.svg?height=400&width=300",
-      name: "Esther Howards",
-      title: "Founder & CEO",
+      name: "Sambhav Jain",
+      title: "Founder & MD",
       facebookUrl: "#",
       linkedinUrl: "#",
       instagramUrl: "#",
     },
     {
       image: teamMember2 || "/placeholder.svg?height=400&width=300",
-      name: "Cameron Williamson",
-      title: "Marketing Head",
-      facebookUrl: "#",
-      linkedinUrl: "#",
-      instagramUrl: "#",
-    },
-    {
-      image: teamMember3 || "/placeholder.svg?height=400&width=300",
-      name: "Liam Cooper",
-      title: "Marketing Head",
+      name: "Pramnyay Advisory Solution LLP",
+      title: "Legal Advisor",
       facebookUrl: "#",
       linkedinUrl: "#",
       instagramUrl: "#",
@@ -92,8 +84,8 @@ const AboutPage = () => {
   ]
 
   const words = [
-    { text: "and", className: "text-white text-3xl md:text-5xl font-semibold font-serif" }, // White animated text
-    { text: "always available.", className: "text-teal-400 text-3xl md:text-5xl font-semibold font-serif" }, // Animated in teal-400
+    { text: "We're building", className: "text-white text-2xl md:text-4xl font-semibold font-serif" }, // White animated text
+    { text: "what's next?", className: "text-teal-400 text-2xl md:text-4xl font-semibold font-serif" }, // Animated in teal-400
   ];
 
   const handleTrialButtonClick = () => {
@@ -109,14 +101,14 @@ const AboutPage = () => {
     <div>
 
       <AboutHeroSection
-        subtitle="Lorem Ipsum is simply dummy text"
-        title="We give you legal assistance"
-        highlightedText="which is instant, precise,"
-        afterHighlightedText="and always available."
+        subtitle=""
+        title="The practice of law is evolving."
+        highlightedText=""
+        afterHighlightedText="what's next?"
         words={words}
         description="Redefining legal efficiency with AI-powered precision."
         image={AboutSection1}
-        buttonText="Contact Us"
+        buttonText="See it in Action"
         buttonOnClick={handleContactButtonClick}
       />
 

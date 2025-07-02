@@ -67,7 +67,7 @@ const ProjectSection = () => {
 
           {/* Right Column - Trial Button and Projects */}
           <div className="space-y-14 mt-12">
-            <div className="flex justify-end mb-12 md:w-[80%] md: mx-auto">
+            <div className="hidden md:flex justify-end mb-12 md:w-[80%] md: mx-auto">
 
               <Button
                 onClick={handleTrialClick}
@@ -76,7 +76,7 @@ const ProjectSection = () => {
                 )}
               >
                 <ChevronRight className=" bg-white text-black rounded-full p-1 min-w-[22px] min-h-[22px]" />
-                Start your Free Trial
+                Contact Us
               </Button>
 
             </div>

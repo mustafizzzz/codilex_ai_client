@@ -32,7 +32,7 @@ const ContentImageSection = ({
   return (
     <section className={cn(bgColor, className)}>
 
-      <div className="container mx-auto px-4 py-35">
+      <div className="container mx-auto px-4 md:px-30 py-35">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-4">
 

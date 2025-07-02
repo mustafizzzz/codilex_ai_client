@@ -12,6 +12,7 @@ import mindfulnessBrandLogo from '../../assets/BrandLogoImage/mindfulnessBrandLo
 import Section1Group from '../../assets/RingImage/Section1Group.png';
 import { FlipWords } from '@/AceternityUi/FlipWords';
 import { HoverBorderGradient } from '@/AceternityUi/HoverBorderGradient';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -27,12 +28,14 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
 
   const words = ["revolutionize", "transform", "elevate", "streamline"];
 
+  const navigate = useNavigate();
+
   return (
 
-    <section className="relative w-full bg-black text-white overflow-hidden">
+    <section className="relative w-full bg-black text-white overflow-hidden py-10 md:py-20">
 
       {/* Main container with relative positioning */}
-      <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative">
+      <div className="container mx-auto px-4 md:px-30 py-4 md:py-24 relative">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center px-4">
 
@@ -40,23 +43,23 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
           <div className="flex flex-col space-y-6 lg:pr-8 relative">
 
             <div className="space-y-6">
-              <h1 className="font-serif text-3xl md:text-5xl font-medium leading-tight">
-                Ready to<FlipWords words={words} duration={1000} className="text-white" /><span className="block text-teal-400">{highlight}</span>
+              <h1 className="font-serif text-2xl md:text-5xl font-medium leading-tight">
+                Ready to<FlipWords words={words} duration={1000} className="text-white" /><h1 className="block text-teal-400 text-xl md:text-4xl">{highlight}</h1>
               </h1>
               <p className="font-sans max-w-md">{subtext}</p>
             </div>
 
-            <div>
+            <div onClick={() => navigate("/qnaTest")}>
               <HoverBorderGradient
                 containerClassName="rounded-full border border-0" // Light border for visibility
                 as="button"
                 className="bg-black text-white flex items-center space-x-2 border border-gray-600 cursor-pointer font-semibold font-sans gap-2"
-
               >
 
                 <div
                   className="p-1 rounded-full bg-white text-black cursor-pointer hover:bg-gray-800 transition-colors"
                   aria-label="Previous testimonial"
+
                 >
                   <ChevronRight className="w-4 h-4" />
                 </div>
@@ -71,14 +74,14 @@ const CtaSection = ({ headline, highlight, subtext, buttonText }) => {
             </div>
 
             {/* Brands */}
-            <div className="pt-20">
+            {/* <div className="pt-20">
               <p className="font-serif text-sm font-medium text-teal-300 mb-5 lg:mb-2 ml-3">Trusted by Leading Brands</p>
               <div className="flex flex-wrap gap-8">
                 {brands.map((brand) => (
                   <BrandLogo key={brand.id} src={brand.src} alt={brand.alt} />
                 ))}
               </div>
-            </div>
+            </div> */}
 
           </div>
 

@@ -33,7 +33,7 @@ const FeaturesSection = () => {
   return (
     <section className="py-35">
       <div className="container mx-auto px-4">
-        <SectionTitle subtitle="Lorem Ipsum" title="What Sets Us Apart?" className="mb-12" />
+        <SectionTitle subtitle="More Than Just AI. It's Legal Intelligence." title="What Sets Us Apart?" className="mb-12" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {features.map((feature, index) => (

@@ -6,9 +6,7 @@ const AuthLayout = ({ children, backgroundImage = "https://dummyimage.com/600x40
       {/* Background image */}
       <div className="absolute inset-0">
         {backgroundImage ? (
-          <img src={backgroundImage || "/placeholder.svg"} alt="Background"
-            loading="lazy"
-            className="w-full h-full object-cover" />
+          <img src={backgroundImage || "/placeholder.svg"} alt="Background" className="w-full h-full object-cover" />
         ) :
           (
             <div className="absolute inset-0 bg-black bg-opacity-80"></div>

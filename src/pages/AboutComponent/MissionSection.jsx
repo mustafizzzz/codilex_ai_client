@@ -4,6 +4,8 @@ import { CheckCircle } from 'lucide-react'
 import CountUp from 'react-countup'
 import AnimatedTooltip from '../../AceternityUi/AnimatedTooltip'
 import { HighlightText } from '@/AceternityUi/HighlightText'
+import About_section3_1 from '../../assets/AboutSection/About_section3_1.png'
+import About_section3_2 from '../../assets/AboutSection/About_section3_2.png'
 
 const MissionSection = ({
   subtitle = "Our Mission",
@@ -37,7 +39,7 @@ const MissionSection = ({
   return (
 
     <section className={cn("bg-black text-white py-16 md:py-24", className)}>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:h-160">
 
@@ -81,7 +83,7 @@ const MissionSection = ({
                 {/* Left Image */}
                 <div className="w-full max-w-md overflow-hidden rounded-lg mb-8">
                   <img
-                    src="https://dummyimage.com/250x300"
+                    src={About_section3_2 || "https://dummyimage.com/250x300"}
                     alt="Business professionals in conversation"
                     className="w-full h-full object-cover"
                   />
@@ -122,12 +124,12 @@ const MissionSection = ({
                 </div>
 
                 {/*Animated Tooltip  */}
-                <div className="md:hidden flex flex-col justify-center items-center bg-white rounded-xl p-3 mt-10 w-full shadow-lg">
+                {/* <div className="md:hidden flex flex-col justify-center items-center bg-white rounded-xl p-3 mt-10 w-full shadow-lg">
                   <h3 className="text-black text-medium font-medium font-sans block mb-2">Our Users Worldwide</h3>
                   <div className="w-full flex flex-row items-center justify-center">
                     <AnimatedTooltip items={items} />
                   </div>
-                </div>
+                </div> */}
 
               </div>
 
@@ -136,7 +138,7 @@ const MissionSection = ({
 
                 <div className="w-full max-w-md overflow-hidden rounded-lg">
                   <img
-                    src="https://dummyimage.com/250x300"
+                    src={About_section3_1 || "https://dummyimage.com/250x300"}
                     alt="Business professionals working with laptop"
                     className="w-full h-full object-cover"
                   />
@@ -144,14 +146,14 @@ const MissionSection = ({
               </div>
 
               {/* Animated Tooltip */}
-              <div className="absolute hidden md:block md:top-20 md:left-60 flex flex-col items-center bg-white rounded-xl p-3 shadow-lg">
+              {/* <div className="absolute  md:block md:top-20 md:left-60 flex flex-col items-center bg-white rounded-xl p-3 shadow-lg">
                 <h3 className="text-black text-base font-medium font-sans mb-2">
                   Our Users Worldwide
                 </h3>
                 <div className="w-full flex items-center justify-center pr-5">
                   <AnimatedTooltip items={items} />
                 </div>
-              </div>
+              </div> */}
 
 
 

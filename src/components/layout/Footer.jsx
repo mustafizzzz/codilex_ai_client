@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="md:col-span-3">
             <div className="flex items-center py-3">
               <Link to="/" className="flex items-center space-x-2">
-                <img src={companyLogoWhite} alt="company logo" className='h-8 w-full object-cover text-white' />
+                {/* <img src={companyLogoWhite} alt="company logo" className='h-8 w-full object-cover text-white' /> */}
                 <span className="text-xl font-bold">CodiLex.ai</span>
               </Link>
             </div>

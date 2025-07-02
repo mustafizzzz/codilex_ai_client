@@ -10,16 +10,16 @@ const BrandsSection = ({ brands = [], className = "" }) => {
   const waveColors = ["#38bdf8", "#818cf8", "#c084fc", "#e879f9", "#22d3ee"]
 
   return (
-    <section className={cn("py-35", className)}>
-      <div className="container mx-auto px-4">
-        <h2 className="text-2xl md:text-6xl font-bold text-center mb-2">Trusted by</h2>
+    <section className={cn("py-24", className)}>
+      <div className="container mx-auto px-8">
+        {/* <h2 className="text-2xl md:text-6xl font-bold text-center mb-2">Trusted by</h2>
         <h2 className="text-2xl md:text-6xl font-bold text-center mb-2">Top-Class Brands</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {brands.map((brand, index) => (
             <BrandCard key={index} src={brand.logo} alt={brand.name} href={brand.url} />
           ))}
-        </div>
+        </div> */}
 
         <CTABanner
           backgroundImage={CTABackgroundBanner}

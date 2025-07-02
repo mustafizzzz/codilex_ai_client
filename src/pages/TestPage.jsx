@@ -12,65 +12,46 @@ import { ShootingStars } from '@/AceternityUi/ShootingStars'
 import { StarsBackground } from '@/AceternityUi/StarsBackground'
 import { WavyBackground } from '@/AceternityUi/WavyBackground'
 import { Confetti, ConfettiButton } from '@/AceternityUi/ConfettiButtonComponent'
+import axios from 'axios'
+import { InfiniteMovingCards } from '@/pages/HomeComponent/InfiniteMovingCard'
 
 
 
 const TestPage = ({ className = "" }) => {
 
-  const items = [
-    { id: 1, name: "John Doe", designation: "Senior Lawyer", image: "https://randomuser.me/api/portraits/men/4.jpg" },
-    { id: 2, name: "Jane Smith", designation: "Legal Analyst", image: "https://randomuser.me/api/portraits/men/8.jpg" },
-  ];
-
   const testimonials = [
     {
       quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://dummyimage.com/250x300",
+        "What impresses me most about Codilex is how it streamlines my daily practice. The judgment summarisation feature alone is remarkable—it condenses vast amounts of information into clear, concise points in minutes. This allows me to get to the heart of a matter quicker and prepare my cases more effectively. It has fundamentally changed how I manage my caseload.",
+      name: "Nikhil Kaushik",
+      title: "Advocate, Punjab & Haryana High Court",
     },
     {
       quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://dummyimage.com/250x300",
+        "Integrating Codilex into our workflow has been a game-changer. It handles the time-consuming research and initial drafting that used to bog down our junior associates, freeing them up for higher-value, billable tasks. The AI is incredibly reliable, works 24/7, and has significantly reduced our research overhead. It’s not just a tool; it’s a productivity multiplier for the entire firm.",
+      name: "Shubham",
+      title: "Partner at Pramnyay Law Firm",
     },
     {
       quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: "https://dummyimage.com/250x300",
+        "In the fast-paced environment of the Supreme Court, speed and precision are everything. Codilex delivers on both. Its ability to instantly pull up relevant case law and precedents has saved me countless hours in preparation. On more than one occasion, it has uncovered a crucial insight that has strengthened my arguments in court. It’s an indispensable tool for any serious Advocate.",
+      name: "Shrenik Bhardwaj",
+      title: "Advocate, Supreme Court of India",
     },
     {
       quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: "https://dummyimage.com/250x300",
+        "Practicing independently at the Delhi High Court requires leveraging every possible advantage. Codilex has enhanced my practice by providing a powerful new layer of insight into my cases. The platform helps me approach my work with greater confidence and develop my arguments more robustly. It’s a significant step forward for how solo practitioners can operate.",
+      name: "Rajan Saini",
+      title: "Advocate, Delhi High Court",
     },
     {
       quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: "https://dummyimage.com/250x300",
+        "In a demanding corporate environment like ICICI Lombard, efficiency is paramount. Codilex has become an invaluable asset for our team, significantly streamlining our legal processes. Its capabilities allow us to manage our workload more effectively and dedicate more time to strategic, high-impact activities. It has truly enhanced our day-to-day productivity.",
+      name: "Ankit Kashyap",
+      title: "Legal Officer, ICICI Lombard",
     },
+
   ];
-
-  const words = [
-
-    { text: "which is", className: "text-white" }, // White animated text
-    { text: "instant,", className: "text-teal-400 font-semibold" }, // Animated in teal-400
-    { text: "precise,", className: "text-teal-400 font-semibold" }, // Animated in teal-400
-    { text: "and", className: "text-white" }, // White animated text
-    { text: "always available.", className: "text-teal-400 font-semibold" }, // Animated in teal-400
-  ];
-
-  const confettiRef = useRef(null);
-
 
   return (
     // <div className="relative w-[400px] h-[400px]">
@@ -205,19 +186,26 @@ const TestPage = ({ className = "" }) => {
     //   </p>
     // </WavyBackground>
 
-    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-        Confetti
-      </span>
+    // <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+    //   <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+    //     Confetti
+    //   </span>
 
-      <Confetti
-        ref={confettiRef}
-        className="absolute left-0 top-0 z-0 size-full"
-        onMouseEnter={() => {
-          if (confettiRef.current) {
-            confettiRef.current.fire({});
-          }
-        }}
+    //   <Confetti
+    //     ref={confettiRef}
+    //     className="absolute left-0 top-0 z-0 size-full"
+    //     onMouseEnter={() => {
+    //       if (confettiRef.current) {
+    //         confettiRef.current.fire({});
+    //       }
+    //     }}
+    //   />
+    // </div>
+    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+      <InfiniteMovingCards
+        items={testimonials}
+        direction="right"
+        speed="slow"
       />
     </div>
 

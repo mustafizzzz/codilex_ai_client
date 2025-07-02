@@ -38,7 +38,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-1">
-            <img src={companyLogo} alt="company logo" loading="lazy" className='h-8 w-full object-cover' />
+            {/* <img src={companyLogo} alt="company logo" loading="lazy" className='h-8 w-full object-cover' /> */}
             <span className="text-xl font-bold">CodiLex.ai</span>
           </Link>
 
