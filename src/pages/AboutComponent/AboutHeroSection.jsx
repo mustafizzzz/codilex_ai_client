@@ -23,23 +23,16 @@ const AboutHeroSection = ({
     <section className={cn("text-white py-16 md:py-24 overflow-hidden px-4 md:px-25 xxl:px-0", className)}>
 
       <div className="bg-black rounded-xl container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center p-1 md:p-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center p-1 md:p-4">
 
           {/* Left Content */}
           <div className="space-y-6 py-4">
-            <p className="text-sm text-gray-300 font-sans">{subtitle}</p>
-
-            {/* Original Text */}
-            {/* <h1 className="text-2xl md:text-4xl font-semibold leading-tight font-serif">
-              {title} <br />
-              <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
-              {afterHighlightedText}
-            </h1> */}
+            {/* <p className="text-sm text-gray-300 font-sans">{subtitle}</p> */}
 
             {/* Type writer animation */}
             <h1 className="text-2xl md:text-5xl font-semibold leading-tight font-serif">
               {title} <br />
-              <span className="text-teal-400 font-serif">{highlightedText}</span> <br />
+              {/* <span className="text-teal-400 font-serif">{highlightedText}</span> <br /> */}
               <span className="block">
                 <TypewriterEffectSmooth words={words} />
               </span>
@@ -58,7 +51,7 @@ const AboutHeroSection = ({
               <HoverBorderGradient
                 containerClassName="rounded-full border border-0" // Light border for visibility
                 as="button"
-                className="bg-black text-white flex items-center space-x-2 border border-gray-600 cursor-pointer font-semibold font-sans gap-2"
+                className="bg-black flex items-center space-x-2 border border-gray-600 cursor-pointer font-semibold font-sans gap-2 text-teal-400"
               >
 
                 <div

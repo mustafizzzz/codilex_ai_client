@@ -27,7 +27,7 @@ const TeamMemberCard = ({
   const textColor = isDarkBg ? "text-white" : "text-black"
 
   return (
-    <div className={cn("rounded-lg overflow-hidden", bgVariants[bgColor] || bgVariants.default, className)}>
+    <div className={cn("max-w-lg mx-auto rounded-lg overflow-hidden", bgVariants[bgColor] || bgVariants.default, className)}>
       {/* Image container */}
       <div className="relative aspect-[3/4] w-full">
         <img src={image || "/placeholder.svg?height=400&width=300"} alt={name} className="w-full h-full object-cover hover:scale-105 transition-transform overflow-hidden rounded-lg" />
