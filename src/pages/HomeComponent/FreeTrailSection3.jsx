@@ -1,11 +1,11 @@
-import React from 'react'
-import Section5Group from '../../assets/FreeTrailSectionImage/Section5Group.png'
-import ContentImageSection from './FreeTrailSectionComponent/ContentImageSection'
+import React from "react";
+import Section5Group_2 from "../../assets/FreeTrailSectionImage/Section5Group_2.png";
+import ContentImageSection from "./FreeTrailSectionComponent/ContentImageSection";
 
 const FreeTrailSection3 = () => {
   const handleButtonClick = () => {
-    console.log("Free trial button clicked")
-  }
+    console.log("Free trial button clicked");
+  };
 
   return (
     <ContentImageSection
@@ -15,11 +15,11 @@ const FreeTrailSection3 = () => {
       description="Trained on vast legal databases, our AI delivers precise, reliable insights. Whether you're a lawyer or an individual, it streamlines legal work, saving time, money, and stress."
       buttonText="Start your Free Trial"
       buttonOnClick={handleButtonClick}
-      image={Section5Group}
+      image={Section5Group_2}
       bgColor="bg-black"
       imageOnRight={false} // Image will be on the right
     />
-  )
-}
+  );
+};
 
-export default FreeTrailSection3
+export default FreeTrailSection3;

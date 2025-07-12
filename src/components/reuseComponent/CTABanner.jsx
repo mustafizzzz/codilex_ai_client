@@ -1,7 +1,6 @@
-"use client"
-import { WavyBackground } from "@/AceternityUi/WavyBackground"
-import { cn } from "../../lib/utils"
-
+"use client";
+import { WavyBackground } from "@/AceternityUi/WavyBackground";
+import { cn } from "../../lib/utils";
 
 const CTABanner = ({
   backgroundImage,
@@ -20,8 +19,11 @@ const CTABanner = ({
   waveWidth = 50,
 }) => {
   return (
-    <div className={cn(`container mx-auto ${paddingY}`, className)}>
-      <div className="relative rounded-xl overflow-hidden mx-4 md:mx-1" style={{ minHeight: "200px" }}>
+    <div className={cn(`container mx-auto px-4 ${paddingY}`, className)}>
+      <div
+        className="relative rounded-xl overflow-hidden mx-4 md:mx-1"
+        style={{ minHeight: "200px" }}
+      >
         {/* WavyBackground component */}
         <WavyBackground
           colors={waveColors}
@@ -36,16 +38,14 @@ const CTABanner = ({
           <div className="w-full h-full" />
         </WavyBackground>
 
-
-
         {/* Content - highest z-index to appear above everything */}
         <div className="container mx-auto px-4 py-16 text-center relative">
           <h2 className={titleClassName}>{title}</h2>
           <button
             className={buttonClassName}
             onClick={(e) => {
-              if (onButtonClick) onButtonClick(e)
-              if (buttonHref) window.location.href = buttonHref
+              if (onButtonClick) onButtonClick(e);
+              if (buttonHref) window.location.href = buttonHref;
             }}
           >
             {buttonText}
@@ -53,8 +53,7 @@ const CTABanner = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CTABanner
-
+export default CTABanner;
